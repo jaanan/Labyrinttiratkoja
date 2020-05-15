@@ -1,5 +1,5 @@
 # Labyrinttiratkoja
-Ohjelma luo (?) ja ratkaisee labyrintin
+Ohjelma luo ja ratkaisee labyrintin
 
 Aihe: Verkot ja polun etsintä; miten löydetään tehokkaasti nopein/lyhin reitti labyrintistä ulos.  
 Ohjelmointikieli: Java
