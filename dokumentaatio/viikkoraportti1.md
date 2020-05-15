@@ -25,9 +25,7 @@ En ole ennen koodannut tämmöisiä projekteja NetBeansillä. Epäselväksi jäi
 Valitsin nyt vain Gradlen, koska se näytti helpommalta ja oli esimerkeissä ensimmäisenä. En kuitenkaan tiedä, olisiko näillä 
 esim merkitystä aihevalintani kannalta. Minulle ihan käskyt "aja git sitä ja tätä <linkki repoosi>" ovat vaikeita hahmottaa, 
 jos ei kerrota, missä se pitää ajaa. Tietokantojen perusteet kurssin labrakurssilla oli alussa hyvin 101 selostettu, miten 
-projektin saa omalla koneella alkuun. Tähän olisi kiva ollut saada tarkempia ohjeita. Muokkaan tätä tiedostoa ihan tässä git hubissa.\
-En tiedä, onko tämä oikea tapa käsitellä näitä .md tiedostoja vai pitäisikö tämä tehdä jotenkin "vaikeammin". Kurssimateriaa-
-leista jäi semmoinen mielikuva, että nämä olisivat jotenkin todella hankalia tiedostomuotoja, joten saa nähdä, onnistunko näin. 
+projektin saa omalla koneella alkuun. Tähän olisi kiva ollut saada tarkempia ohjeita. 
 Minulla näkyy tuolla joku gitignore osana tätä repoa. Pitäisikö se poistaa ja jos kyllä niin miksi ja jos ei niin miksi ja miten se poistetaan jos se pitää poistaa?
 
 # Mitä teen seuraavaksi?  
