@@ -1,5 +1,5 @@
 # Labyrinttiratkoja
-Ohjelma luo ja ratkaisee labyrintin
+Tiralabra alkukesä 2020
 
 Aihe: Verkot ja polun etsintä; miten löydetään tehokkaasti nopein/lyhin reitti labyrintistä ulos.  
 Ohjelmointikieli: Java
