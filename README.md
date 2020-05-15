@@ -7,8 +7,6 @@ Työn laajuus: Ohjelma, joka luo labyrintin ja sitten ratkaisee sen. Sisältää
 
 Dokumentaatio: Määrittelydokumentti ei ole vielä valmis.
 
-Viikkoraportti numero 1: ensimmäisen viikkoraportin linkki tulee tähän, kun raportti on valmis.
-
 Issuet on sallittu vertaisarviointia varten.
 
-[Viikkoraportti1](https://www.google.com)
+[Viikkoraportti1](https://github.com/jaanan/labyrinttiratkoja/blob/master/dokumentaatio/viikkoraportti1.md)
