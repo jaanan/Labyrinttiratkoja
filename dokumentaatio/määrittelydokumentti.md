@@ -15,6 +15,6 @@ Toinen vaihto ehto on, että yhdestä napista ohjelma luo labyrintin ja toisesta
 Tavoitteena olevat aika- ja tilavaativuudet (m.m. O-analyysit)
 En osaa sanoa vielä. 
 
-Lähteet
-https://en.wikipedia.org/wiki/Maze_solving_algorithm
-https://en.wikipedia.org/wiki/Maze_generation_algorithm
+Lähteet\
+https://en.wikipedia.org/wiki/Maze_solving_algorithm\
+https://en.wikipedia.org/wiki/Maze_generation_algorithm\
