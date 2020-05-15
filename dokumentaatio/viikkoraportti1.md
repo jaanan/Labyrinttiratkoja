@@ -29,6 +29,8 @@ projektin saa omalla koneella alkuun. Tähän olisi kiva ollut saada tarkempia o
 En tiedä, onko tämä oikea tapa käsitellä näitä .md tiedostoja vai pitäisikö tämä tehdä jotenkin "vaikeammin". Kurssimateriaa-
 leista jäi semmoinen mielikuva, että nämä olisivat jotenkin todella hankalia tiedostomuotoja, joten saa nähdä, onnistunko näin. 
 
+Minulla näkyy tuolla joku gitignore osana tätä repoa. Pitäisikö se poistaa ja jos kyllä niin miksi ja jos ei niin miksi ja miten se poistetaan jos se pitää poistaa?
+
 Mitä teen seuraavaksi?
 Jatkan ensimmäisen viikon tehtävät loppuun. Määrittelydokumentti pitää luoda ja sinne ne tiedot, joita minulla projektistani
 tällä hetkellä on ja mitä tiedoista vielä puuttuu. Tästä pitää myös luoda linkki README:hen.
