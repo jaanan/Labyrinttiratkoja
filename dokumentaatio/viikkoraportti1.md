@@ -28,11 +28,10 @@ jos ei kerrota, missä se pitää ajaa. Tietokantojen perusteet kurssin labrakur
 projektin saa omalla koneella alkuun. Tähän olisi kiva ollut saada tarkempia ohjeita. Muokkaan tätä tiedostoa ihan tässä git hubissa.\
 En tiedä, onko tämä oikea tapa käsitellä näitä .md tiedostoja vai pitäisikö tämä tehdä jotenkin "vaikeammin". Kurssimateriaa-
 leista jäi semmoinen mielikuva, että nämä olisivat jotenkin todella hankalia tiedostomuotoja, joten saa nähdä, onnistunko näin. 
-Minulla näkyy tuolla joku gitignore osana tätä repoa. Pitäisikö se poistaa ja jos kyllä niin miksi ja jos ei niin miksi ja miten se poistetaan jos se pitää poistaa?\
+Minulla näkyy tuolla joku gitignore osana tätä repoa. Pitäisikö se poistaa ja jos kyllä niin miksi ja jos ei niin miksi ja miten se poistetaan jos se pitää poistaa?
 
 # Mitä teen seuraavaksi?  
-Jatkan ensimmäisen viikon tehtävät loppuun. Määrittelydokumentti pitää luoda ja sinne ne tiedot, joita minulla projektistani
-tällä hetkellä on ja mitä tiedoista vielä puuttuu. Tästä pitää myös luoda linkki README:hen.
+Jatkan ensimmäisen viikon tehtävät loppuun. Määrittelydokumentin kysymyksiin en ole kaikkiin vielä osannut vastata. Kurssisivun linkkeihin sekä testing and rmq projektiin ajattelin vielä perehtyä ennen kuin siirryn tekemään seuraavan viikon osuutta. 
 
 # Palautetta tai kysymyksiä kurssin ohjaajalle
 Jonkin verran palautetta taisi edellisiin kohtiin sisältyäkin. Kiitos tsempistä ensimmäisen luennon aikana. Koitan päästä tämän kurssin läpi.
