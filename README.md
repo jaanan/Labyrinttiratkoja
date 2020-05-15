@@ -11,4 +11,4 @@ Viikkoraportti numero 1: ensimmäisen viikkoraportin linkki tulee tähän, kun r
 
 Issuet on sallittu vertaisarviointia varten.
 
-[I'm an inline-style link](https://www.google.com)
+[Viikkoraportti1](https://www.google.com)
