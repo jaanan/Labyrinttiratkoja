@@ -1,4 +1,4 @@
-#Mitä olen tehnyt tällä viikolla?  
+# Mitä olen tehnyt tällä viikolla?  
 Tutustuin Tiralabra 2020 alkukesä -kurssin sivuihin. 
 Osallistuin aloitusluentoon ja päätin siellä aiheekseni verkot ja polunetsintä, tarkemmin labyrintin luomisen ja ratkaisemisen. 
 Kurssisivujen avulla pääsin alkuun projektissa ja sain tehtyä melkein kaiken, mitä ensimmäisellä viikolla odotetaan tehtäväksi.
@@ -12,10 +12,10 @@ Issueiden luonti sallittu repoon
 Rekisteröidytty kurssille labtoolissa
 Tarkoituksena tutustua myös testing and rmq projektiin viikonlopun aikana.
 
-#Miten ohjelma on edistynyt?  
+# Miten ohjelma on edistynyt?  
 Ohjelman koodaaminen ei ole vielä varsinaisesti alkanut. Avasin Gradle-projektin NetBeansissä. 
 
-#Mitä opin tällä viikolla / tänään?  
+# Mitä opin tällä viikolla / tänään?  
 Koodaan niin harvoin, että aina, kun uusi kurssi alkaa joudun opettelemaan kaiken alusta asti. Mistä terminaali löytyy, 
 mikä on minun GitHub nimimerkki, muuttamaan salasanan, muistelemaan ihan yksinkertaisetkin käskyt uudestaan, kuten git push
 pull ja commit jne. Olen aina yhtä yllättynyt huomatessani, että jokin toimiii, kuten olen toivonut. 
@@ -30,7 +30,7 @@ En tiedä, onko tämä oikea tapa käsitellä näitä .md tiedostoja vai pitäis
 leista jäi semmoinen mielikuva, että nämä olisivat jotenkin todella hankalia tiedostomuotoja, joten saa nähdä, onnistunko näin. 
 Minulla näkyy tuolla joku gitignore osana tätä repoa. Pitäisikö se poistaa ja jos kyllä niin miksi ja jos ei niin miksi ja miten se poistetaan jos se pitää poistaa?
 
-#Mitä teen seuraavaksi?  
+# Mitä teen seuraavaksi?  
 Jatkan ensimmäisen viikon tehtävät loppuun. Määrittelydokumentti pitää luoda ja sinne ne tiedot, joita minulla projektistani
 tällä hetkellä on ja mitä tiedoista vielä puuttuu. Tästä pitää myös luoda linkki README:hen.
 
