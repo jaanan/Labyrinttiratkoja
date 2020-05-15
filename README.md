@@ -10,3 +10,5 @@ Dokumentaatio: Määrittelydokumentti ei ole vielä valmis.
 Viikkoraportti numero 1: ensimmäisen viikkoraportin linkki tulee tähän, kun raportti on valmis.
 
 Issuet on sallittu vertaisarviointia varten.
+
+[I'm an inline-style link](https://www.google.com)
