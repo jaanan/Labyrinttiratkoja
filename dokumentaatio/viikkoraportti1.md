@@ -1,16 +1,16 @@
 # Mitä olen tehnyt tällä viikolla?  
-Tutustuin Tiralabra 2020 alkukesä -kurssin sivuihin. 
-Osallistuin aloitusluentoon ja päätin siellä aiheekseni verkot ja polunetsintä, tarkemmin labyrintin luomisen ja ratkaisemisen. 
-Kurssisivujen avulla pääsin alkuun projektissa ja sain tehtyä melkein kaiken, mitä ensimmäisellä viikolla odotetaan tehtäväksi.
-Määrittelydokumenttia en ole tätä kirjoittaessani vielä aloittanut. 
-Aihe, käytettävä ohjelmointikieli ja työn laajuus on päätetty.
-Olen tustustunut kurssimateriaaliin ja ainakin yrittänyt lukea dokumentaatio-ohjeet tarkkaan.
-Viikkoraportti numero 1 on kirjoitettu.
-Repositorion etusivulle ei ole vielä tätä kirjoitettaessa linkattu suoraan viikkoraportteja.
-Projekti luotu.
-Issueiden luonti sallittu repoon
-Rekisteröidytty kurssille labtoolissa
-Tarkoituksena tutustua myös testing and rmq projektiin viikonlopun aikana.
+* Tutustuin Tiralabra 2020 alkukesä -kurssin sivuihin. 
+* Osallistuin aloitusluentoon ja päätin siellä aiheekseni verkot ja polunetsintä, tarkemmin labyrintin luomisen ja ratkaisemisen. 
+* Kurssisivujen avulla pääsin alkuun projektissa ja sain tehtyä melkein kaiken, mitä ensimmäisellä viikolla odotetaan tehtäväksi.
+* Määrittelydokumenttia en ole tätä kirjoittaessani vielä aloittanut. 
+* Aihe, käytettävä ohjelmointikieli ja työn laajuus on päätetty.
+* Olen tustustunut kurssimateriaaliin ja ainakin yrittänyt lukea dokumentaatio-ohjeet tarkkaan.
+* Viikkoraportti numero 1 on kirjoitettu.
+* Repositorion etusivulle ei ole vielä tätä kirjoitettaessa linkattu suoraan viikkoraportteja.
+* Projekti luotu.
+* Issueiden luonti sallittu repoon
+* Rekisteröidytty kurssille labtoolissa
+* Tarkoituksena tutustua myös testing and rmq projektiin viikonlopun aikana.
 
 # Miten ohjelma on edistynyt?  
 Ohjelman koodaaminen ei ole vielä varsinaisesti alkanut. Avasin Gradle-projektin NetBeansissä. 
