@@ -20,7 +20,7 @@ Koodaan niin harvoin, että aina, kun uusi kurssi alkaa joudun opettelemaan kaik
 mikä on minun GitHub nimimerkki, muuttamaan salasanan, muistelemaan ihan yksinkertaisetkin käskyt uudestaan, kuten git push
 pull ja commit jne. Olen aina yhtä yllättynyt huomatessani, että jokin toimiii, kuten olen toivonut. 
 
-#Mikä jäi epäselväksi tai tuottanut vaikeuksia? Vastaa tähän kohtaan rehellisesti, koska saat tarvittaessa apua tämän kohdan perusteella.  
+# Mikä jäi epäselväksi tai tuottanut vaikeuksia? Vastaa tähän kohtaan rehellisesti, koska saat tarvittaessa apua tämän kohdan perusteella.  
 En ole ennen koodannut tämmöisiä projekteja NetBeansillä. Epäselväksi jäi myös milloin kannattaa valita Gradle ja milloin Maven.
 Valitsin nyt vain Gradlen, koska se näytti helpommalta ja oli esimerkeissä ensimmäisenä. En kuitenkaan tiedä, olisiko näillä 
 esim merkitystä aihevalintani kannalta. Minulle ihan käskyt "aja git sitä ja tätä <linkki repoosi" ovat vaikeita hahmottaa, 
