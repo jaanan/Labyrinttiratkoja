@@ -13,7 +13,5 @@ Tarkoitus on luoda ohjelma, jonka saa ladattua omalle koneelle. Ohjelma kysyy k�
 ## Tavoitteena olevat aika- ja tilavaativuudet (m.m. O-analyysit)
 En osaa sanoa vielä. 
 
-Lähteet\
-https://en.wikipedia.org/wiki/Maze_solving_algorithm  
-https://en.wikipedia.org/wiki/Maze_generation_algorithm  
+## Lähteet
 [A* algoritmistä](http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
