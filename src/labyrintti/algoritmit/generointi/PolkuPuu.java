@@ -1,4 +1,4 @@
-package maze.algorithms.generation;
+package labyrintti.algoritmit.generointi;
 
 // tässä luokassa luodaan randomeja polkuja labyrinttiin
 
