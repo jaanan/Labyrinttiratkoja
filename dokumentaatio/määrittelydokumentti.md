@@ -5,9 +5,7 @@
 - Labyrintin ratkaisemiseen käytän A* algoritmiä
 
 ## Mitä ongelmaa ratkaiset ja miksi valitsit kyseiset algoritmit?
-Ratkaisen labyrintin luomisen ja sen ratkaisemisen. Mikäli tästä tulee liian vaikeaa, supistan työn vain jälkimmäiseen.
-Tällä hetkellä kuitenkin ideana olisi, että ohjelman käyttöliittymässä voisi painaa nappia, jota painettaessa 
-ohjelma luo randomin labyrintin ja ratkaisee esimerkiksi sen lyhimmän reitin.
+Ratkaisen labyrintin luomisen ja sen ratkaisemisen. Haluan, että ohjelma voi luoda satunnaisen labyrintin, siksi valitsen käytettäväksi Kruskalin algoritmin, joka on hyvä tällaiseen tarkoitukseen. Labyrintin ratkaisemiseen taas sopii A* algoritmi, joka on tehokas reittien löytämiseen.
 
 ## Mitä syötteitä ohjelma saa ja miten näitä käytetään
 Tarkoitus on luoda ohjelma, jonka saa ladattua omalle koneelle. Ohjelma kysyy käyttäjältä minkä kokoisen labyrintin hän haluaa, luo algoritmin avulla satunnaisen labyrintin ja näyttää toisen algoritmin avulla labyrintille löydetyn ratkaisun. 
@@ -18,3 +16,4 @@ En osaa sanoa vielä.
 Lähteet\
 https://en.wikipedia.org/wiki/Maze_solving_algorithm  
 https://en.wikipedia.org/wiki/Maze_generation_algorithm  
+[A* algoritmistä] (http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
