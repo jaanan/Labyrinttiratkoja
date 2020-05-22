@@ -6,6 +6,8 @@ Verkot ja polun etsintä; miten löydetään tehokkaasti nopein/lyhin reitti lab
 ## Ohjelmointikieli  
 Java  
 ## Työn laajuus  
-Ohjelma, joka luo labyrintin ja sitten ratkaisee sen.<br/>Sisältää yksinkertaisen käyttöliittymän, jossa voi nappia painamalla luoda labyrintin ja nähdä, minkä ratkaisun ohjelma tälle satunnaisesti luodulle labyrintille on löytänyt. 
+Ohjelma, joka luo käyttäjän toivoman kokoisen satunnaisen labyrintin ja sitten ratkaisee sen.<br/>
+
+[Määrittelydokumentti](https://github.com/jaanan/labyrinttiratkoja/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
 [Viikkoraportti1](https://github.com/jaanan/labyrinttiratkoja/blob/master/dokumentaatio/viikkoraportti1.md)
