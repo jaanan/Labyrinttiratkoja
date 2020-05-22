@@ -11,3 +11,5 @@ Ohjelma, joka luo käyttäjän toivoman kokoisen satunnaisen labyrintin ja sitte
 [Määrittelydokumentti](https://github.com/jaanan/labyrinttiratkoja/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
 [Viikkoraportti1](https://github.com/jaanan/labyrinttiratkoja/blob/master/dokumentaatio/viikkoraportti1.md)
+
+[Viikkoraportti2](https://github.com/jaanan/labyrinttiratkoja/blob/master/dokumentaatio/viikkoraportti2.md)
