@@ -20,8 +20,7 @@ Huom! Ei toimi vielä
 
 Labyrinttiratkoja on Java-sovellus
 
-1. Varmista, että koneellasi on JDK 11 asennettuna
-2. Kloonaa sovellus
-3. Kokoa
-4. Aja
+1. Kloonaa sovellus
+2. Kokoa
+3. Aja
 
