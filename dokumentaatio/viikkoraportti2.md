@@ -27,5 +27,7 @@ Olen Googlannut muiden tästä aiheesta tekemiä projekteja ja miettinyt, voisik
 # Mitä teen seuraavaksi?  
 Minulla on ensi viikolla kesäloma. Olen ottanut lomaa tätä kurssia varten, jotta pääsen tämän läpi. Sitä seuraavalla viikolla menen töihin, mutta pyydän taas loppukesäkuun lomaa, jotta saan tämän kurssin tehtyä. Teen seuraavaksi kaiken, mikä on jäänyt tekemättä tähän asti (esim. testaus ja checkstyle ja "konffaus", mitä se sitten onkaan). Lisäksi teen 3. viikon osuutta niin pitkälle kuin ehdin.
 
+Selvittelen, mitä javasta tuttuja juttuja tässä saa käyttää ja mitä ei ja jos jotain esim ArrayListiä ei saa käyttää, niin miten sen voi tehdä niin, että se hyväksytään tälle kurssille.
+
 # Palautetta tai kysymyksiä kurssin ohjaajalle
-Kiitos vastauksista edellisen palautuksen yhteydessä. Koitan edelleen päästä tämän kurssin läpi.
+Kiitos vastauksista edellisen palautuksen yhteydessä. Koitan edelleen päästä tämän kurssin läpi. Jos ei keksi jotain tapaa kiertää jotain esim. ArrayListiä, niin onko se automaattisesti hylsy koko kurssista jos muuten on yrittänyt tehdä projektin testeineen kaikkineen?
