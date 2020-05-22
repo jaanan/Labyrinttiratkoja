@@ -16,4 +16,4 @@ En osaa sanoa vielä.
 Lähteet\
 https://en.wikipedia.org/wiki/Maze_solving_algorithm  
 https://en.wikipedia.org/wiki/Maze_generation_algorithm  
-[A* algoritmistä] (http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
+[A* algoritmistä](http://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
