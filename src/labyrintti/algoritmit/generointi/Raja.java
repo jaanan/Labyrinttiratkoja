@@ -1,4 +1,4 @@
-package maze.algo.generation;
+package labyrintti.algoritmit.generointi;
 
 // Luokka rajoille, joiden sisällä PolkuPuu kulkee polkuja luodessaan.
 class Raja {
