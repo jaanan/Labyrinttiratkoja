@@ -1,8 +1,13 @@
 package labyrintti.algoritmit.generointi;
 
-// muista importit
+import labyrintti.malli.Pala;
 
-// tässä luokassa luodaan randomeja polkuja labyrinttiin
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import static java.util.stream.Collectors.toList;
+import static labyrintti.malli.Pala.Tyyppi.KULKU;
 
 
 public class PolkuPuu {
@@ -56,7 +61,7 @@ public class PolkuPuu {
     // Luodaan lista reunoista, jotka yhdistävät polkuja Kruskalin algoritmiä hyödyntäen.
 
     private List<Raja> luoViritettyPuu(List<Raja> rajat) {
-        var erotteleOsat = new ErotetutOsat(leveys* korkeus);
+        var erotteleOsat = new ErotetutOsat(leveys * korkeus);
         return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList());
     }
 
@@ -68,7 +73,7 @@ public class PolkuPuu {
 
     // Lista paloista, jotka yhdistävät polkuja
     
-    private List<Pala> createPassages(List<Raja> viritettyPuu) {
+    private List<Pala> luoPolut(List<Raja> viritettyPuu) {
         return viritettyPuu.stream().map(raja -> {
                 var eka = indeksista(raja.getEkaPala());
                 var toka = indeksista(raja.getTokaPala());
