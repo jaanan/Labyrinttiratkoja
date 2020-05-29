@@ -2,10 +2,6 @@ package labyrintti.algoritmit.ratkaisu;
 
 import labyrintti.malli.Pala;
 
-//muut importit
-
-// tämä luokka etsii reitin labyrintin sisäänkäynniltä uloskäynnille.
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -14,7 +10,7 @@ import java.util.PriorityQueue;
 import java.util.Set;
 
 import static java.util.Comparator.comparingInt;
-import static maze.model.Cell.Type.ESCAPE;
+import static labyrintti.malli.Pala.Tyyppi.ULOS;
 
 public class Ratkoja {
 
@@ -38,7 +34,7 @@ public class Ratkoja {
     // Jo läpikäydyt solmut
     private Set<Solmu> suljettu = new HashSet<>();
 
-    // luodaan ruudukko solmuja
+    // luodaan uusi Ratkoja kaksiulotteisesta palataulukosta sekä alku- ja loppupaloista 
     public Ratkoja(Pala[][] ruudut, Pala alku, Pala loppu) {
         this.korkeus = ruudut.length;
         this.leveys = ruudut[0].length;
@@ -78,11 +74,11 @@ public class Ratkoja {
     // Tekee annetusta Palasta uuden reitin alkupalaan
     private List<Pala> teeUusiReitti(Solmu solmu) {
         var polku = new LinkedList<Pala>();
-        polku.add(palaan(nyky));
-        while (nyky.getVanhempi() != nyky) {
-            var vanhempi = nyky.getVanhempi();
-            polku.addFirst(palaan(Vanhempi));
-            nyky = vanhempi;
+        polku.add(palaan(solmu));
+        while (solmu.getVanhempi() != solmu) {
+            var vanhempi = solmu.getVanhempi();
+            polku.addFirst(palaan(vanhempi));
+            solmu = vanhempi;
         }
         return polku;
     }
