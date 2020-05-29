@@ -59,12 +59,12 @@ public class Konsoli {
         }
     }
 
-    // Menu esittelee käyttäjälle hänen vaihtoehtonsa
+    // Valikko esittelee käyttäjälle hänen vaihtoehtonsa
     private void valikko() {
         System.out.println("--- Valikko ---");
         System.out.println("1. Luo labyrintti");
         System.out.println("2. Lataa labyrintti");
-        if (isMazeAvailable) {
+        if (onkolabyrinttiSaatavilla) {
             System.out.println("3. Tallenna labyrintti");
             System.out.println("4. Toista labyrintti");
             System.out.println("5. Löydä pakotie");
@@ -78,17 +78,17 @@ public class Konsoli {
     }
 
     //Kysytään käyttäjältä kokotiedot labyrintin luomiseksi ja luodaan halutun kokoinen labyrintti
-    private void generate() {
+    private void luo() {
         System.out.println("Anna labyrintille koko ([koko] tai [korkeus leveys] muodossa)");
         var toive = scanner.nextLine();
         var split = toive.split(" ");
         if (split.length == 1) {
             var koko = parseInt(split[0]);
-            maze = new Labyrintti(koko);
+            labyrintti = new Labyrintti(koko);
         } else if (split.length == 2) {
             var korkeus = parseInt(split[0]);
             var leveys = parseInt(split[1]);
-            maze = new Labyrintti(korkeus, leveys);
+            labyrintti = new Labyrintti(korkeus, leveys);
         } else {
             System.out.println("Antamasi koko ei kelpaa.");
         }
@@ -102,7 +102,7 @@ public class Konsoli {
         var tiedostonimi = scanner.nextLine();
         try {
             var tiedosto = Files.readString(Paths.get(tiedostonimi));
-            maze = Labyrintti.load(tiedosto);
+            labyrintti = Labyrintti.load(tiedosto);
             onkolabyrinttiSaatavilla = true;
             System.out.println("Labyrintti on ladattu.");
         } catch (IOException e) {
