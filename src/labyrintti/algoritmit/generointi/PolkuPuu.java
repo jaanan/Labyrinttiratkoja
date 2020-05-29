@@ -40,7 +40,7 @@ public class PolkuPuu {
         }
         
         for (int rivi = 1; rivi < korkeus; rivi++) {
-            rajat.add(new Raja(indeksiin(row, 0), toIndex(row - 1, 0)));
+            rajat.add(new Raja(indeksiin(rivi, 0), toIndex(rivi - 1, 0)));
         }
         
         for (int rivi = 1; rivi < korkeus; rivi++) {
