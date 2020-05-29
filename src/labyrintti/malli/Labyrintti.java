@@ -134,9 +134,9 @@ public class Labyrintti {
                 if (pala.onkoMuuri()) {
                     sb.append("II");
                 } else if (avaaReitti && pala.onkoUlos()) {
-                    sb.append("▓▓");
+                    sb.append("  ");
                 } else {
-                    sb.append("██");
+                    sb.append("▓▓");
                 }
             }
             sb.append('\n');
