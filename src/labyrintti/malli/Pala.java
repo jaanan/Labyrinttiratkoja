@@ -1,6 +1,6 @@
 package labyrintti.malli;
 
-// importtaukset
+import java.util.Objects;
 
 // Tässä luokassa käsitellään yksittäisen labyrintin palasen tietoja
 
@@ -38,7 +38,7 @@ public class Pala {
         return tyyppi == Tyyppi.MUURI;
     }
 
-    public boolean onkoULOS() {
+    public boolean onkoUlos() {
         return tyyppi == Tyyppi.ULOS;
     }
 
