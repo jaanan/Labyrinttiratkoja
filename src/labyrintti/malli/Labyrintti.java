@@ -149,25 +149,25 @@ public class Labyrintti {
         return toString(false);
     }
 
-    public static Labyrintti load(String str) {
-        try {
-            var kokonaan = str.split("\n");
-            var koko = kokonaan[0].split(" ");
-            var korkeus = parseInt(koko[0]);
-            var leveys = parseInt(koko[1]);
-            var ruudukko = new Pala[korkeus][leveys];
-            for (int i = 0; i < korkeus; i++) {
-                var rivi = kokonaan[i + 1].split(" ");
-                for (int j = 0; j < leveys; j++)
-                    ruudukko[i][j] = new Pala(i, j, intToTyyppi(parseInt(rivi[j])));
-            }
-            return new Labyrintti(korkeus, leveys, ruudukko);
-        } catch (Exception e) {
-            throw new IllegalArgumentException(
-                "Valitettavasti ei pysty lataamaan labyrinttia."
-            );
-        }
-    }
+//    public static Labyrintti load(String str) {
+//        try {
+//            var kokonaan = str.split("\n");
+//            var koko = kokonaan[0].split(" ");
+//            var korkeus = parseInt(koko[0]);
+//            var leveys = parseInt(koko[1]);
+//            var ruudukko = new Pala[korkeus][leveys];
+//            for (int i = 0; i < korkeus; i++) {
+//                var rivi = kokonaan[i + 1].split(" ");
+//                for (int j = 0; j < leveys; j++)
+//                    ruudukko[i][j] = new Pala(i, j, intToTyyppi(parseInt(rivi[j])));
+//            }
+//            return new Labyrintti(korkeus, leveys, ruudukko);
+//        } catch (Exception e) {
+//            throw new IllegalArgumentException(
+//                "Valitettavasti ei pysty lataamaan labyrinttia."
+//            );
+//        }
+//    }
 
     private Labyrintti(int korkeus, int leveys, Pala[][] ruudukko) {
         this.korkeus = korkeus;
@@ -175,22 +175,22 @@ public class Labyrintti {
         this.ruudukko = ruudukko;
     }
 
-    private static Pala.Tyyppi intToTyyppi(int val) {
-        return val == 1 ? MUURI : KULKU;
-    }
+//    private static Pala.Tyyppi intToTyyppi(int val) {
+//        return val == 1 ? MUURI : KULKU;
+//    }
 
-    public String export() {
-        var sb = new StringBuilder();
-        sb.append(korkeus).append(' ').append(leveys).append('\n');
-        for (var rivi : ruudukko) {
-            for (var pala : rivi)
-                sb.append(tyyppiToInt(pala)).append(' ');
-            sb.append('\n');
-        }
-        return sb.toString();
-    }
+//    public String export() {
+//        var sb = new StringBuilder();
+//        sb.append(korkeus).append(' ').append(leveys).append('\n');
+//        for (var rivi : ruudukko) {
+//            for (var pala : rivi)
+//                sb.append(tyyppiToInt(pala)).append(' ');
+//            sb.append('\n');
+//        }
+//        return sb.toString();
+//    }
 
-    private int tyyppiToInt(Pala pala) {
-        return pala.onkoMuuri() ? 1 : 0;
-    }
+//    private int tyyppiToInt(Pala pala) {
+//        return pala.onkoMuuri() ? 1 : 0;
+//    }
 }
