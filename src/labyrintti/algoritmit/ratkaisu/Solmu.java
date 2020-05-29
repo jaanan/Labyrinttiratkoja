@@ -1,8 +1,6 @@
 package labyrintti.algoritmit.ratkaisu;
 
-// importit
-
-// Tässä luokassa lasketaan reitin pituutta sisäänkäynniltä eteenpäin
+import java.util.Objects;
 
 class Solmu {
   
@@ -37,7 +35,7 @@ class Solmu {
         return onkoMuuri;
     }
 
-    Node getVanhempi() {
+    Solmu getVanhempi() {
         return vanhempi;
     }
 
@@ -46,8 +44,7 @@ class Solmu {
     }
 
     void laskeArvio(Solmu solmu) {
-        this.arvio = Math.abs(solmu.rivi - this.rivi) // saako tämmöistä Math.abs käyttää?
-            + Math.abs(solmu.sarake - this.sarake);
+        this.arvio = Math.abs(solmu.rivi - this.rivi) + Math.abs(solmu.sarake - this.sarake); // saako tämmöistä Math.abs käyttää?
     }
 
     boolean onkoParempi(Solmu solmu) {
@@ -56,7 +53,7 @@ class Solmu {
 
     void muokkaaMatka(Solmu solmu) {
         this.vanhempi = solmu;
-        this.kuljettu = node.kuljettu + RAJAKUSTANNUS;
+        this.kuljettu = solmu.kuljettu + RAJAKUSTANNUS;
         ratkaisu = kuljettu + arvio;
     }
 
