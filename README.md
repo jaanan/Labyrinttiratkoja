@@ -16,18 +16,18 @@ Ohjelma, joka luo käyttäjän toivoman kokoisen satunnaisen labyrintin ja sitte
 
 ## Käyttöohjeet
 
-Huom! Ei toimi vielä
+Huom! Olen yrittänyt käynnistää tätä näiden ohjeiden mukaan, mutta ei käynnisty. Apu kelpaa!
 
-Labyrinttiratkoja on Java-sovellus
+Labyrinttiratkoja on Java-sovellus. Tietokoneella tulee olla asennettuna JDK 11, jotta sovellus toimii. 
 
 1. Kloonaa sovellus
 
-git clone https://github.com/jaanan/labyrinttiratkoja.git
-cd labyrinttiratkoja
+git clone https://github.com/jaanan/labyrinttiratkoja.git  
+cd labyrinttiratkoja/src/labyrintti
 
 2. Kokoa
 
-javac -sourcepath ./src -d bin src/labyrintti/Main.java
+javac Main.java
 
 3. Aja
 
