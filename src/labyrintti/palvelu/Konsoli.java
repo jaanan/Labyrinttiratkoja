@@ -116,8 +116,8 @@ public class Konsoli {
         System.out.println("Anna tiedostonimi");
         var tiedostonimi = scanner.nextLine();
         try {
-            var vie = labyrintti.export();
-            Files.write(Paths.get(tiedostonimi), export.getBytes());
+            var vie = labyrintti.vie();
+            Files.write(Paths.get(tiedostonimi), vie.getBytes());
             System.out.println("Labyrintti on tallennettu.");
         } catch (IOException e) {
             System.out.println("Tiedostoon " + tiedostonimi + " ei pysty kirjoittamaan.");
