@@ -25,8 +25,8 @@ public class ErotetutOsat {
         sija[i] = 0;
     }
 
-    public int getSize() {
-        return size;
+    public int getKoko() {
+        return koko;
     }
 
     public int etsi(int i) {
