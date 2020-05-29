@@ -92,7 +92,7 @@ public class Labyrintti {
     private void teeOvet() {
         asetaPala(0, 1, KULKU);
         asetaPala(korkeus - 1, getPoistumisSarake(), KULKU);
-        if (height % 2 == 0)
+        if (korkeus % 2 == 0)
             asetaPala(korkeus - 2, getPoistumisSarake(), KULKU);
     }
 
