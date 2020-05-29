@@ -35,16 +35,16 @@ public class Konsoli {
                     case 1:
                         luo();
                         break;
+                    // case 2:
+                        // lataa();
+                        // break;
+                    // case 3:
+                        // tallenna();
+                        // break;
+                    // case 4:
+                       // tulosta();
+                       // break;
                     case 2:
-                        lataa();
-                        break;
-                    case 3:
-                        tallenna();
-                        break;
-                    case 4:
-                        tulosta();
-                        break;
-                    case 5:
                         etsiPakoreitti(); 
                         break;
                     default:
@@ -63,11 +63,11 @@ public class Konsoli {
     private void valikko() {
         System.out.println("--- Valikko ---");
         System.out.println("1. Luo labyrintti");
-        System.out.println("2. Lataa labyrintti");
+        // System.out.println("2. Lataa labyrintti");
         if (onkolabyrinttiSaatavilla) {
-            System.out.println("3. Tallenna labyrintti");
-            System.out.println("4. Toista labyrintti");
-            System.out.println("5. Löydä pakotie");
+            // System.out.println("3. Tallenna labyrintti");
+            // System.out.println("4. Toista labyrintti");
+            System.out.println("2. Löydä pakotie");
         }
         System.out.println("0. Lopeta");
     }
@@ -97,37 +97,37 @@ public class Konsoli {
     }
 
     // Kysytään tiedostonimeä ja ladataan labyrintti sen mukaan korvaten vanha
-    private void lataa() {
-        System.out.println("Anna tiedostonimi");
-        var tiedostonimi = scanner.nextLine();
-        try {
-            var tiedosto = Files.readString(Paths.get(tiedostonimi));
-            labyrintti = Labyrintti.load(tiedosto);
-            onkolabyrinttiSaatavilla = true;
-            System.out.println("Labyrintti on ladattu.");
-        } catch (IOException e) {
-            System.out.println("Tiedosto " + tiedostonimi + " ei ole olemassa.");
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
-    }
+//    private void lataa() {
+//        System.out.println("Anna tiedostonimi");
+//        var tiedostonimi = scanner.nextLine();
+//        try {
+//            var tiedosto = Files.readString(Paths.get(tiedostonimi));
+//            labyrintti = Labyrintti.load(tiedosto);
+//            onkolabyrinttiSaatavilla = true;
+//            System.out.println("Labyrintti on ladattu.");
+//        } catch (IOException e) {
+//            System.out.println("Tiedosto " + tiedostonimi + " ei ole olemassa.");
+//        } catch (IllegalArgumentException e) {
+//            System.out.println(e.getMessage());
+//        }
+//    }
 
-    private void tallenna() {
-        System.out.println("Anna tiedostonimi");
-        var tiedostonimi = scanner.nextLine();
-        try {
-            var vie = labyrintti.export();
-            Files.write(Paths.get(tiedostonimi), vie.getBytes());
-            System.out.println("Labyrintti on tallennettu.");
-        } catch (IOException e) {
-            System.out.println("Tiedostoon " + tiedostonimi + " ei pysty kirjoittamaan.");
-        }
-    }
+//    private void tallenna() {
+//        System.out.println("Anna tiedostonimi");
+//        var tiedostonimi = scanner.nextLine();
+//        try {
+//            var vie = labyrintti.export();
+//            Files.write(Paths.get(tiedostonimi), vie.getBytes());
+//            System.out.println("Labyrintti on tallennettu.");
+//        } catch (IOException e) {
+//            System.out.println("Tiedostoon " + tiedostonimi + " ei pysty kirjoittamaan.");
+//        }
+//    }
 
    // Tulostaa labyrintin
-    private void tulosta() {
-        System.out.println(labyrintti);
-    }
+//    private void tulosta() {
+//        System.out.println(labyrintti);
+//    }
 
     // Näyttää pakoreitin ulos labyrintistä
     private void etsiPakoreitti() {
