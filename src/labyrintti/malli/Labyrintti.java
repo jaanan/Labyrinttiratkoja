@@ -1,7 +1,7 @@
 package labyrintti.malli;
 
 import labyrintti.algoritmit.generointi.PolkuPuu;
-// Importtauksia
+import labyrintti.algoritmit.ratkaisu.Ratkoja;
 
 import java.util.function.Consumer;
 
@@ -99,9 +99,7 @@ public class Labyrintti {
     // luodaan sattumanvaraisia kulkukäytäviä 
   
     private void luoTiet() {
-        new PolkuPuu(korkeus, leveys)
-            .generoi()
-            .forEach(asetaPala());
+        new PolkuPuu(korkeus, leveys).generoi().forEach(asetaPala());
     }
 
 
@@ -111,10 +109,8 @@ public class Labyrintti {
 
     public String etsiUlos() {
         if (!onRatkottu) {
-            new Ratkoja(ruudukko, getAstu(), getUlos())
-                .etsiUlos()
-                .forEach(asetaPala());
-            isSolved = true;
+            new Ratkoja(ruudukko, getAstu(), getUlos()).etsiUlos().forEach(asetaPala());
+            onRatkottu = true;
         }
         return toString(true);
     }
@@ -163,14 +159,12 @@ public class Labyrintti {
             for (int i = 0; i < korkeus; i++) {
                 var rivi = kokonaan[i + 1].split(" ");
                 for (int j = 0; j < leveys; j++)
-                    ruudukko[i][j] = new Pala(
-                        i, j, intToTyyppi(parseInt(rivi[j]))
-                    );
+                    ruudukko[i][j] = new Pala(i, j, intToTyyppi(parseInt(rivi[j])));
             }
             return new Labyrintti(korkeus, leveys, ruudukko);
         } catch (Exception e) {
             throw new IllegalArgumentException(
-                "Valitettavasti ei pysty lataamaan labyrinttia. "
+                "Valitettavasti ei pysty lataamaan labyrinttia."
             );
         }
     }
@@ -187,12 +181,10 @@ public class Labyrintti {
 
     public String export() {
         var sb = new StringBuilder();
-        sb.append(korkeus).append(' ')
-          .append(leveys).append('\n');
+        sb.append(korkeus).append(' ').append(leveys).append('\n');
         for (var rivi : ruudukko) {
             for (var pala : rivi)
-                sb.append(tyyppiToInt(pala))
-                  .append(' ');
+                sb.append(tyyppiToInt(pala)).append(' ');
             sb.append('\n');
         }
         return sb.toString();
