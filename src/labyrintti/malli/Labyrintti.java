@@ -155,7 +155,7 @@ public class Labyrintti {
             var koko = kokonaan[0].split(" ");
             var korkeus = parseInt(koko[0]);
             var leveys = parseInt(koko[1]);
-            var grid = new Pala[korkeus][leveys];
+            var ruudukko = new Pala[korkeus][leveys];
             for (int i = 0; i < korkeus; i++) {
                 var rivi = kokonaan[i + 1].split(" ");
                 for (int j = 0; j < leveys; j++)
