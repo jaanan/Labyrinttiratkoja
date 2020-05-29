@@ -102,7 +102,7 @@ public class Konsoli {
         var tiedostonimi = scanner.nextLine();
         try {
             var tiedosto = Files.readString(Paths.get(tiedostonimi));
-            maze = Labyrintti.lataa(tiedosto);
+            maze = Labyrintti.load(tiedosto);
             onkolabyrinttiSaatavilla = true;
             System.out.println("Labyrintti on ladattu.");
         } catch (IOException e) {
