@@ -1,6 +1,6 @@
 package labyrintti.algoritmit.generointi;
 
-// importtaukset
+import static java.util.stream.IntStream.range;
 
 
 public class ErotetutOsat {
