@@ -123,11 +123,11 @@ public class Konsoli {
 //            System.out.println("Tiedostoon " + tiedostonimi + " ei pysty kirjoittamaan.");
 //        }
 //    }
-
-   // Tulostaa labyrintin
-//    private void tulosta() {
-//        System.out.println(labyrintti);
-//    }
+  
+      // Tulostaa labyrintin
+    private void tulosta() {
+        System.out.println(labyrintti);
+    }
 
     // Näyttää pakoreitin ulos labyrintistä
     private void etsiPakoreitti() {
