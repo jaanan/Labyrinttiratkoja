@@ -132,11 +132,11 @@ public class Labyrintti {
         for (var rivi : ruudukko) {
             for (var pala : rivi) {
                 if (pala.onkoMuuri()) {
-                    sb.append("▓▓");
-                } else if (avaaReitti && pala.onkoUlos()) {
-                    sb.append("  ");
-                } else {
                     sb.append("██");
+                } else if (avaaReitti && pala.onkoUlos()) {
+                    sb.append("▓▓");
+                } else {
+                    sb.append("  ");
                 }
             }
             sb.append('\n');
