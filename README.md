@@ -16,6 +16,8 @@ Ohjelma, joka luo käyttäjän toivoman kokoisen satunnaisen labyrintin ja sitte
 
 [Viikkoraportti3](https://github.com/jaanan/labyrinttiratkoja/blob/master/dokumentaatio/viikkoraportti3.md)
 
+[Viikkoraportti4](https://github.com/jaanan/labyrinttiratkoja/blob/master/dokumentaatio/viikkoraportti4.md)
+
 ## Käyttöohjeet
 
 Labyrinttiratkoja on Java-sovellus. Tietokoneella tulee olla asennettuna JDK 11, jotta sovellus toimii. 
