@@ -1,5 +1,5 @@
 # Labyrinttiratkoja
-Tiralabra alkukesä 2020
+Tiralabra alkukesä 2021
 
 ## Aihe    
 Verkot ja polun etsintä; miten löydetään tehokkaasti nopein/lyhin reitti labyrintistä ulos.    
