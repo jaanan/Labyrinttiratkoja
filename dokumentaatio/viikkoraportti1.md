@@ -1,35 +1,19 @@
 # Mitä olen tehnyt tällä viikolla?  
 * Tutustuin Tiralabra 2020 alkukesä -kurssin sivuihin. 
-* Osallistuin aloitusluentoon ja päätin siellä aiheekseni verkot ja polunetsintä, tarkemmin labyrintin luomisen ja ratkaisemisen. 
-* Kurssisivujen avulla pääsin alkuun projektissa ja sain tehtyä melkein kaiken, mitä ensimmäisellä viikolla odotetaan tehtäväksi.
-* Määrittelydokumenttia on aloitettu, mutta se on osin puutteellinen. En osannut vielä vastata kaikkiin kohtiin.
-* Aihe, käytettävä ohjelmointikieli ja työn laajuus suurinpiirtein on päätetty.
-* Olen tustustunut kurssimateriaaliin ja ainakin yrittänyt lukea dokumentaatio-ohjeet tarkkaan.
-* Viikkoraportti numero 1 on kirjoitettu.
-* Repositorion etusivulle luotu suora linkki viikkoraporttiin 1
-* Projekti luotu
-* Issueiden luonti sallittu repoon
-* Rekisteröidytty kurssille labtoolissa
-* Tarkoituksena tutustua myös testing and rmq projektiin viikonlopun aikana.
+* Osallistuin aloitusluentoon ja kysyin siellä, onko ok jatkaa vanhaa projektia, joka on jäänyt edellisellä tiralabralla kesken. Tämä on se projekti, joka minulla jäi viime kesänä kesken, koska en ymmärtänyt testauksesta mitään. Tänä viikonloppuna minulla on tarkoituksena opiskella testaukseen liittyviä asioita ja uudistaa tätä projektia niin, että saan tähän testit mukaan. 
+* Tarkoitus on vielä perehtyä vkl aikana kurssin sivuihin, joihin en ole vielä kummemmin ehtinyt perehtyä.
 
 # Miten ohjelma on edistynyt?  
-Ohjelman koodaaminen ei ole vielä varsinaisesti alkanut. Avasin Gradle-projektin NetBeansissä. 
+Ohjelman koodaaminen ei ole vielä varsinaisesti alkanut. Kaikki mitä tässä on näkyvillä on käytännössä se, mihin viimeksi jäin.
 
 # Mitä opin tällä viikolla / tänään?  
-Koodaan niin harvoin, että aina, kun uusi kurssi alkaa joudun opettelemaan kaiken alusta asti. Mistä terminaali löytyy, 
-mikä on minun GitHub nimimerkki, muuttamaan salasanan, muistelemaan ihan yksinkertaisetkin käskyt uudestaan, kuten git push
-pull ja commit jne. Olen aina yhtä yllättynyt huomatessani, että jokin toimiii, kuten olen toivonut. Tällä hetkellä opettelen näitä markdown-muotoiluja... 
+En ole vielä ehtinyt oppia mitään. Tarkoitus on paneutua tähän kurssiin lauantaina ja sunnuntaina ja opetella testaukseen liittyviä asioita. 
 
 # Mikä jäi epäselväksi tai tuottanut vaikeuksia?   
-En ole ennen koodannut tämmöisiä projekteja NetBeansillä. Epäselväksi jäi myös milloin kannattaa valita Gradle ja milloin Maven.
-Valitsin nyt vain Gradlen, koska se näytti helpommalta ja oli esimerkeissä ensimmäisenä. En kuitenkaan tiedä, olisiko näillä 
-esim merkitystä aihevalintani kannalta. Minulle ihan käskyt "aja git sitä ja tätä <linkki repoosi>" ovat vaikeita hahmottaa, 
-jos ei kerrota, missä se pitää ajaa. Tietokantojen perusteet kurssin labrakurssilla oli alussa hyvin 101 selostettu, miten 
-projektin saa omalla koneella alkuun. Tähän olisi kiva ollut saada tarkempia ohjeita. 
-Minulla näkyy tuolla joku gitignore osana tätä repoa. Pitäisikö se poistaa ja jos kyllä niin miksi ja jos ei niin miksi ja miten se poistetaan jos se pitää poistaa?
+Tämä projekti jäi viimeksi kesken, sillä en saanut testejä rakennettua. Lisäksi minulla on tuolla ns. monimutkaisia Java-kirjaston funktioita/toiminallisuuksia jotka pitää kirjoittaa auki niin että, labyrintti toimii silti. Näissä asioissa on minulle kyllä paljon tekemistä tällä kurssilla. 
 
 # Mitä teen seuraavaksi?  
-Jatkan ensimmäisen viikon tehtävät loppuun. Määrittelydokumentin kysymyksiin en ole kaikkiin vielä osannut vastata. Kurssisivun linkkeihin sekä testing and rmq projektiin ajattelin vielä perehtyä ennen kuin siirryn tekemään seuraavan viikon osuutta. 
+Perehdyn Ohtu-kurssin testaamiseen liittyviin tehtäviin ja ohjeisiin. Ne varmasti auttavat tässä kun lähden pohtimaan,  miten saan testit rakennettua. 
 
 # Palautetta tai kysymyksiä kurssin ohjaajalle
-Jonkin verran palautetta taisi edellisiin kohtiin sisältyäkin. Kiitos tsempistä ensimmäisen luennon aikana. Koitan päästä tämän kurssin läpi.
+Kiitos joustavuudesta, että saan osallistua kurssiin tällä kesken jääneellä projektilla. 
