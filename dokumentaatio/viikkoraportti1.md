@@ -17,3 +17,6 @@ Perehdyn Ohtu-kurssin testaamiseen liittyviin tehtäviin ja ohjeisiin. Ne varmas
 
 # Palautetta tai kysymyksiä kurssin ohjaajalle
 Kiitos joustavuudesta, että saan osallistua kurssiin tällä kesken jääneellä projektilla. 
+
+# Kurssiin käytetty työaika tällä viikolla
+3 h
