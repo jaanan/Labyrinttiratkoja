@@ -24,6 +24,8 @@ public class Pala {
         this.tyyppi = tyyppi;
     }
 
+// pystyisikö tässä esim olemaan joku if lause, että jos tyyppi on KULKU niin palautettaisiinkin esimerkiksi int 1? näin päästäisiin eroon tuosta Tyypistä. 
+
     public int getRivi() {
         return rivi;
     }
