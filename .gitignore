@@ -1,3 +1,4 @@
 /labyrinttiratkoja/.nb-gradle/
 *.class
 /bin
+.vscode
