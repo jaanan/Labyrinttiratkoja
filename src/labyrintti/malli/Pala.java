@@ -12,6 +12,8 @@ public class Pala {
         ULOS;
     }
 
+    //2021 pystyisikö tuon enum Tyypin toteuttamaan esimerkiksi Integerinä? Tai pystyykö taulukoihin sisällyttämään enumeja?
+
     private int rivi;
     private int sarake;
     private final Tyyppi tyyppi;
