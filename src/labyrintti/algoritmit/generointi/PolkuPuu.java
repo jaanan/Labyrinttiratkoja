@@ -29,6 +29,8 @@ public class PolkuPuu {
         var puu = luoViritettyPuu(reunat);
         return luoPolut(puu);
     }
+//2021 mietitään, miten tuon ylläolevan voisi toteuttaa taulukkona
+// Miten tuon Pala-listan voi toteuttaa hyödyntäen vain taulukoita? Voiko taulukoihin tallentaa Paloja?
 
 // Luodaan rajat labyrintille
 // Ongelmallinen ArrayList käytössä
