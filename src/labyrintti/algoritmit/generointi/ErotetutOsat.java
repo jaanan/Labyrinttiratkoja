@@ -9,7 +9,7 @@ public class ErotetutOsat {
     private int[] sija;
     private int koko;
 
-    // mahdollisesti ongelmallinen range(0, koko).forEach(this::teeOsa);
+    // mahdollisesti ongelmallinen range(0, koko).forEach(this::teeOsa); Onko mahdollista korvata jollain muulla loopilla? Tässä tiedostossa ei muita algoritmillisiä ongelmia kurssin läpimenon kannalta
 
     public ErotetutOsat(int koko) {
         this.koko = koko;
