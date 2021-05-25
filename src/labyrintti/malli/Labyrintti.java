@@ -48,6 +48,7 @@ public class Labyrintti {
         luoTiet();
     }
 
+    // ilmeiesesti tuon tyypin saa sisällytettyä tänne näin, vaikka se ei ole Integer
     private void asetaPala(int rivi, int sarake, Pala.Tyyppi tyyppi) {
         ruudukko[rivi][sarake] = new Pala(rivi, sarake, tyyppi);
     }
