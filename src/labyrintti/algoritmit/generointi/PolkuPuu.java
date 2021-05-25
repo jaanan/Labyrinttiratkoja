@@ -62,6 +62,7 @@ public class PolkuPuu {
     }
 
     // Luodaan lista reunoista, jotka yhdistävät polkuja Kruskalin algoritmiä hyödyntäen.
+    // Mitä tässä tuo stream ja filter ja collect toList tekevät? raja on ilmeisesti järjestyksessä otettava olio listasta rajat? connects on tässä tiedostossa myöhemmin esitettävä funktio ja erotteleOsat yllä annettu muuttuja.
 
     private List<Raja> luoViritettyPuu(List<Raja> rajat) {
         var erotteleOsat = new ErotetutOsat(leveys * korkeus);
