@@ -22,6 +22,7 @@ public class PolkuPuu {
 
 // Luodaan random lista palasia, joista muodostuu labyrintti
 // Saako tässä olla List? Entä Collections.shuffle?
+// Tuo Collections Shuffle sufflaa reunoja, jotka on tallennettu ArrayListiin, joten ehkä ensin pitää onnistua jotenkin tallentamaan Rajat taulukkoon arraylistin sijaan... 
     
     public List<Pala> generoi() {
         var reunat = luoReunat();
