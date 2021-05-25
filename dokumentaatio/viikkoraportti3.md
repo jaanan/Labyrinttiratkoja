@@ -13,4 +13,11 @@ Tiistai
 
 Luojan kiitos nyt on vasta tiistai. Pelkäsin jo, että on keskiviikko. Noh. Tänään olen miettinyt mm. PolkuPuu.java -tiedoston funktioita. Siellä on Collections.shuffle(reunat); joka pitäisi saada pois tuosta Collectionsista. luoReunat() funktio palauttaa Listin. Olen selvittänyt, että taulukoihin pystyy kyllä tallentamaan myös itse keksittyjä olioita, ei vain Stringejä, Charreja ja Intejä. Joten Rajoja pystyy tallentamaan myös taulukkoon. Tuo funktio luoReunat tallentaa tällä hetkellä niitä ArrayListeihin. Pitäisi saada muutettua niin, että se tallentaa niitä taulukoihin. Mietin vielä, teenkö kokonaan uuden tiedoston, johon kokeilen näitä uusia vai alkanko kommentoida noita vanhoja metodeja pois ja kokeilen tuossa samassa tiedostossa rakentaa hommaa eteenpäin taulukoilla. Ekana mun pitää varmastikin kerrata taulukot. Miten niihin lisättiin jne. Mitä taulukoilla voi tehdä, jotta voin käyttää niitä hyödyllisesti tässä. Olen jo unohtanut nämä, sillä kävin ohjelmoinnin perusteet vuonna 2016. 
 
-Edellä mainittujen lisäksi tuolla samassa PolkuPuu-tiedostossa on return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList()); näköinen hirviö. Tuo pitää jossain vaiheessa myös saada auki, mutta aloitan ehkä noista ArrayListit taulukoiksi asioista. 
+Edellä mainittujen lisäksi tuolla samassa PolkuPuu-tiedostossa on metodissa luoViritettyPuu return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList()); näköinen hirviö. Tuo pitää jossain vaiheessa myös saada auki, mutta aloitan ehkä noista ArrayListit taulukoiksi asioista. Metodissa luoPolut on myös hämmennystä aiheuttava
+ 
+//            viritettyPuu.stream().map(raja -> {
+//                var eka = indeksista(raja.getEkaPala());
+//                var toka = indeksista(raja.getTokaPala());
+//                return getPolku(eka, toka);
+//            }).collect(toList());
+//    }
