@@ -21,3 +21,5 @@ Edellä mainittujen lisäksi tuolla samassa PolkuPuu-tiedostossa on metodissa lu
 //                return getPolku(eka, toka);
 //            }).collect(toList());
 //    }
+
+Tässäkin viritetty puu on List muotoinen, joten se pitää muuttaa taulukoksi.
