@@ -24,7 +24,7 @@ public class PolkuPuu {
 // Saako tässä olla List? Entä Collections.shuffle?
 // Tuo Collections Shuffle sufflaa reunoja, jotka on tallennettu ArrayListiin, joten ehkä ensin pitää onnistua jotenkin tallentamaan Rajat taulukkoon arraylistin sijaan... 
     
-    public List<Pala> generoi() {
+    public Pala[] generoi() {
         var reunat = luoReunat();
         Collections.shuffle(reunat);
         var puu = luoViritettyPuu(reunat);
@@ -36,20 +36,20 @@ public class PolkuPuu {
 // Luodaan rajat labyrintille
 // Ongelmallinen ArrayList käytössä
 
-    private List<Raja> luoReunat() {
-        var rajat = new ArrayList<Raja>();
+    private Raja[] luoReunat() {
+        var rajat = new Raja[leveys+korkeus+korkeus*leveys*2];
         for (int sarake = 1; sarake < leveys; sarake++) {
-            rajat.add(new Raja(indeksiin(0, sarake), indeksiin(0, sarake-1)));
+            rajat[sarake-1]=(new Raja(indeksiin(0, sarake), indeksiin(0, sarake-1)));
         }
         
         for (int rivi = 1; rivi < korkeus; rivi++) {
-            rajat.add(new Raja(indeksiin(rivi, 0), indeksiin(rivi - 1, 0)));
+            rajat[leveys+rivi-1]=(new Raja(indeksiin(rivi, 0), indeksiin(rivi - 1, 0)));
         }
         
         for (int rivi = 1; rivi < korkeus; rivi++) {
             for (int sarake = 1; sarake < leveys; sarake++) {
-                rajat.add(new Raja(indeksiin(rivi, sarake), indeksiin(rivi, sarake-1)));
-                rajat.add(new Raja(indeksiin(rivi, sarake), indeksiin(rivi-1, sarake)));
+                rajat[leveys+korkeus+sarake-1]=(new Raja(indeksiin(rivi, sarake), indeksiin(rivi, sarake-1)));
+                rajat[leveys+korkeus+leveys+sarake-1]=(new Raja(indeksiin(rivi, sarake), indeksiin(rivi-1, sarake)));
             }
         }
         return rajat;
@@ -64,7 +64,7 @@ public class PolkuPuu {
     // Luodaan lista reunoista, jotka yhdistävät polkuja Kruskalin algoritmiä hyödyntäen.
     // Mitä tässä tuo stream ja filter ja collect toList tekevät? raja on ilmeisesti järjestyksessä otettava olio listasta rajat? connects on tässä tiedostossa myöhemmin esitettävä funktio ja erotteleOsat yllä annettu muuttuja.
 
-    private List<Raja> luoViritettyPuu(List<Raja> rajat) {
+    private Raja[] luoViritettyPuu(Raja[] rajat) {
         var erotteleOsat = new ErotetutOsat(leveys * korkeus);
         return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList());
     }
@@ -77,7 +77,7 @@ public class PolkuPuu {
 
     // Lista paloista, jotka yhdistävät polkuja
     
-    private List<Pala> luoPolut(List<Raja> viritettyPuu) {
+    private Pala[] luoPolut(Raja[] viritettyPuu) {
         return viritettyPuu.stream().map(raja -> {
                 var eka = indeksista(raja.getEkaPala());
                 var toka = indeksista(raja.getTokaPala());
