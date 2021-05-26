@@ -23,3 +23,7 @@ Edellä mainittujen lisäksi tuolla samassa PolkuPuu-tiedostossa on metodissa lu
 //    }
 
 Tässäkin viritetty puu on List muotoinen, joten se pitää muuttaa taulukoksi.
+
+Keskiviikko
+
+Muuttelin Polkupuu-tiedoston Arraylistejä taulukoiksi. Tein tämän omassa branchissään Visual Studio Codella. En tiedä uskallanko enää pushailla ja pullailla menemään, etten menetä mitään. Pitäisi kerrata, miten nämä branchit toimii. 
