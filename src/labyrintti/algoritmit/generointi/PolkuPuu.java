@@ -76,11 +76,21 @@ public class PolkuPuu {
     }
 
     // Luodaan lista reunoista, jotka yhdistävät polkuja Kruskalin algoritmiä hyödyntäen.
-    // Mitä tässä tuo stream ja filter ja collect toList tekevät? raja on ilmeisesti järjestyksessä otettava olio listasta rajat? connects on tässä tiedostossa myöhemmin esitettävä funktio ja erotteleOsat yllä annettu muuttuja.
+    // Mitä tässä tuo stream ja filter ja collect toList tekevät? raja on ilmeisesti järjestyksessä otettava olio listasta rajat? 
+    // connects on tässä tiedostossa myöhemmin esitettävä funktio ja erotteleOsat yllä annettu muuttuja.
 
     private Raja[] luoViritettyPuu(Raja[] rajat) {
         var erotteleOsat = new ErotetutOsat(leveys * korkeus);
-        return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList());
+    //    return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList());
+    // mites tän truerajat taulukon koko, onko tällä väliä, jos jää liian suureksi? Miten tän sais just oikeen kokoiseksi?
+        Raja[] truerajat = new Raja[leveys+korkeus+korkeus*leveys*2];
+        for (int i = 0; i < rajat.length; i++) {
+            if (connects(rajat[i], erotteleOsat)){
+                // miten vois välttää, että tänne ei jää tyhjiä väliin?
+                truerajat[i]=rajat[i];
+            }
+		}
+        return truerajat;
     }
 
     // Testataan, yhdistääkö raja polkuja
