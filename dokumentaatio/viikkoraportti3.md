@@ -27,3 +27,8 @@ Tässäkin viritetty puu on List muotoinen, joten se pitää muuttaa taulukoksi.
 Keskiviikko
 
 Muuttelin Polkupuu-tiedoston Arraylistejä taulukoiksi. Tein tämän omassa branchissään Visual Studio Codella. En tiedä uskallanko enää pushailla ja pullailla menemään, etten menetä mitään. Pitäisi kerrata, miten nämä branchit toimii. 
+
+Torstai
+
+Tänään on avannut Polkupuu tiedoston funktioita collection.shuffle sellaiseksi, että se toimisi taulukoilla.
+Lisäksi olen työstänyt sen luoViritettyPuu metodia sellaiseksi, että se toimisi taulukoilla ja ilman stream.filter --> collect(toList()) funktioita.
