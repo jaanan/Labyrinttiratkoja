@@ -83,14 +83,24 @@ public class PolkuPuu {
         var erotteleOsat = new ErotetutOsat(leveys * korkeus);
     //    return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList());
     // mites tän truerajat taulukon koko, onko tällä väliä, jos jää liian suureksi? Miten tän sais just oikeen kokoiseksi?
-        Raja[] truerajat = new Raja[leveys+korkeus+korkeus*leveys*2];
+        Raja[] truerajat = new Raja[rajat.length];
+        int apu = 0;
         for (int i = 0; i < rajat.length; i++) {
             if (connects(rajat[i], erotteleOsat)){
-                // miten vois välttää, että tänne ei jää tyhjiä väliin?
+                // miten vois välttää, että tänne ei jää tyhjiä väliin? apumuuttujalla?
                 truerajat[i]=rajat[i];
+                apu++;
             }
 		}
-        return truerajat;
+        Raja[] puunrajat = new Raja[apu];
+        int index = 0;
+        for (int i = 0; i < truerajat.length; i++) {
+            if (truerajat[i]!=null){
+                puunrajat[index]=truerajat[i];
+                index++;
+            }
+		}
+        return puunrajat;
     }
 
     // Testataan, yhdistääkö raja polkuja
