@@ -111,12 +111,22 @@ public class PolkuPuu {
 
     // Lista paloista, jotka yhdistävät polkuja
     
+//    private Pala[] luoPolut(Raja[] viritettyPuu) {
+//        return viritettyPuu.stream().map(raja -> {
+//                var eka = indeksista(raja.getEkaPala());
+//                var toka = indeksista(raja.getTokaPala());
+//                return getPolku(eka, toka);
+//            }).collect(toList());
+//    }
+
     private Pala[] luoPolut(Raja[] viritettyPuu) {
-        return viritettyPuu.stream().map(raja -> {
-                var eka = indeksista(raja.getEkaPala());
-                var toka = indeksista(raja.getTokaPala());
-                return getPolku(eka, toka);
-            }).collect(toList());
+        var kulkupalat = new Pala[viritettyPuu.length];
+        for (int i = 0; i < viritettyPuu.length; i++) {
+            Pala eka = indeksista(viritettyPuu[i].getEkaPala());
+            Pala toka = indeksista(viritettyPuu[i].getTokaPala());
+            kulkupalat[i] = getPolku(eka, toka);
+        }
+        return kulkupalat;
     }
 
     // Muutetaan koordinaatit takaisin 2-ulotteiseen maailmaan sopiviksi
