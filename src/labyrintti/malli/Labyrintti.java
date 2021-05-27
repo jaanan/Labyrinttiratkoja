@@ -100,10 +100,18 @@ public class Labyrintti {
     // luodaan sattumanvaraisia kulkukäytäviä 
   
     private void luoTiet() {
-        new PolkuPuu(korkeus, leveys).generoi().forEach(asetaPala());
+        PolkuPuu pp = new PolkuPuu(korkeus, leveys);
+        var pppalat = pp.generoi();
+        for (int i = 0; i < pppalat.length; i++) {
+            if (pppalat[i].onkoKulku()) {
+                asetaPala(pppalat[i].getRivi(), pppalat[i].getSarake(), KULKU);
+            } else {
+                asetaPala(pppalat[i].getRivi(), pppalat[i].getSarake(), MUURI);
+            }
+        }
     }
 
-
+    
     private Consumer<Pala> asetaPala() {
         return pala -> ruudukko[pala.getRivi()][pala.getSarake()] = pala;
     }
