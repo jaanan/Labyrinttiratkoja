@@ -2,6 +2,7 @@ package labyrintti.algoritmit.generointi;
 
 import labyrintti.malli.Pala;
 
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,11 +23,12 @@ public class PolkuPuu {
 
 // Luodaan random lista palasia, joista muodostuu labyrintti
 // Saako tässä olla List? Entä Collections.shuffle?
-// Tuo Collections Shuffle sufflaa reunoja, jotka on tallennettu ArrayListiin, joten ehkä ensin pitää onnistua jotenkin tallentamaan Rajat taulukkoon arraylistin sijaan... 
+// Tuo Collections Shuffle sufflaa reunoja, jotka on tallennettu ArrayListiin, joten ehkä ensin pitää onnistua jotenkin tallentamaan Rajat taulukkoon arraylistin sijaan...
+// Korvattu Collections.shuffle(reunat); metodilla sekoitaTaulukko  
     
     public Pala[] generoi() {
-        var reunat = luoReunat();
-        Collections.shuffle(reunat);
+        var reunat = luoReunat();     
+        sekoitaTaulukko(reunat);
         var puu = luoViritettyPuu(reunat);
         return luoPolut(puu);
     }
@@ -59,6 +61,18 @@ public class PolkuPuu {
     
     private int indeksiin(int rivi, int sarake) {
         return rivi * leveys + sarake;
+    }
+    
+    // luodaan metodi, joka tekee saman, kuin Collections.shuffle, mutta taulukolle
+    private Raja[] sekoitaTaulukko(Raja[] rajat) {
+		Random rand = new Random();
+		for (int i = 0; i < rajat.length; i++) {
+			int randomIndexToSwap = rand.nextInt(rajat.length);
+			Raja temp = rajat[randomIndexToSwap];
+			rajat[randomIndexToSwap] = rajat[i];
+			rajat[i] = temp;
+		}
+        return rajat;
     }
 
     // Luodaan lista reunoista, jotka yhdistävät polkuja Kruskalin algoritmiä hyödyntäen.
