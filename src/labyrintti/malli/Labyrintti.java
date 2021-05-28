@@ -103,15 +103,11 @@ public class Labyrintti {
         PolkuPuu pp = new PolkuPuu(korkeus, leveys);
         var pppalat = pp.generoi();
         for (int i = 0; i < pppalat.length; i++) {
-            if (pppalat[i].onkoKulku()) {
-                asetaPala(pppalat[i].getRivi(), pppalat[i].getSarake(), KULKU);
-            } else {
-                asetaPala(pppalat[i].getRivi(), pppalat[i].getSarake(), MUURI);
-            }
+            var pala = pppalat[i];
+            ruudukko[pala.getRivi()][pala.getSarake()]= pala;
         }
     }
 
-    
     private Consumer<Pala> asetaPala() {
         return pala -> ruudukko[pala.getRivi()][pala.getSarake()] = pala;
     }
