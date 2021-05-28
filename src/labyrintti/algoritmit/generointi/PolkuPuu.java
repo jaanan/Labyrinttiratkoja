@@ -80,7 +80,7 @@ public class PolkuPuu {
     // connects on tässä tiedostossa myöhemmin esitettävä funktio ja erotteleOsat yllä annettu muuttuja.
 
     private Raja[] luoViritettyPuu(Raja[] rajat) {
-        var erotteleOsat = new ErotetutOsat(leveys * korkeus);
+        ErotetutOsat erotteleOsat = new ErotetutOsat(leveys * korkeus);
     //    return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList());
     // mites tän truerajat taulukon koko, onko tällä väliä, jos jää liian suureksi? Miten tän sais just oikeen kokoiseksi?
         Raja[] truerajat = new Raja[rajat.length];
