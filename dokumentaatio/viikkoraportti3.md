@@ -1,34 +1,20 @@
-Muistiinpanoja ennen palautusta.
+# Mitä olen tehnyt tällä viikolla?
+Olen purkanut labyrintin luomiseen käytettävästä koodista sellaisia funktioita, joita kurssin toteutus hyväksyttävästi ei salli.
 
-Lauantai. Tajusin taas alkaa koodata Visual Studio Codella. Lisäilin gitignoreen tiedostoja kun hämäsi, kun Visua Studio Code herjasi .class tiedostoja. Mietin, voinko poistaa ko. tiedostot ihan kokonaan vai tapahtuisiko jotain hirveää, jos niin tekisin...
+# Miten ohjelma on edistynyt?
+Sain labyrintin totettamaan labyrintin luomisen taulukkoja ja for loopeja käyttämällä ilman javan funktioita. 
 
-poistin vscode directoryn ja /bin kansion. Pelottaa.. Vaikuttaa kuitenkin toimivan. 
+# Mitä opin tällä viikolla / tänään?
+Opin vaikka mitä. Ehkä tärkeimpänä se, että opin näkemään terminaalista, miten voin sieltä trackää, missä koodissa on virhe. Opin myös ajamaan ohjelmaa eri brancheissä. Vaikka ohjelman edistyminen sinänsä on ollut merkityksellistä, vielä tärkeämpää on ollut se, että olen oppinut näitä brancheihin liittyviä komentoja ja ohjelman ajamiseen liittyviä asioita. Visual Studio Coden käyttöä. Koodaan niin harvoin, että kurssien välissä nämä kaikki tiedot tuppaavat unohtumaan.
 
-Sunnuntai
+# Mikä jäi epäselväksi tai tuottanut vaikeuksia?
+Asioista, jotka olen nyt saanut onnistumaan, ei jäänyt mitään epäselvää. Saahan Randomia hyödyntää? Korvasin Collections.shufflen hyödyntämällä Randomia. 
 
-Pohdin ErotetutOsat.javan riviä range(0, koko).forEach(this::teeOsa); ja mietin, että miten sen voisi kirjoittaa esim. for loopiksi. En oikein ymmärrä, mihin tuo this tuossa viittaa. Osasin ehkä muuttaa sen. Vaikuttaa siltä, että ohjelma toimii edelleen. 
-RANGESTA MIETIN: meneekö se tosiaan 0:sta eteenpäin? pitääkö i:n aloittaa nollasta, vai pitäisikö sen aloittaa 1:sestä? Toisaalta näyttää ajavan sitä ihan nätisti näin, joten ilmeisesti 0:sta voi aloittaa. 
+# Mitä teen seuraavaksi?
+Seuraavaksi teen joko testit tälle mitä olen nyt saanut tehtyä tai sitten koitan purkaa algoritmit myös tuosta labyrintin ratkaisupuolesta. Mikäli kurssin voi läpäistä jo sillä, että labyrintin luominen on toteutettu hyödyntämällä Kruskalin algoritmiä ja tämä on toteutettu ilman Javan alkuperäisfunktioita niin voisin siirtyä tässä vaiheessa jo testauksen pariin, jotta ei ole riskiä siitä, että kurssi jäisi taas kesken, mikäli ratkaisun purkaminen osoittautuisi todella ongelmalliseksi.
 
-Tiistai
+# Palautetta tai kysymyksiä kurssin ohjaajalle
+Onko ok jos koodiin jää ratkaisupuolelle näitä hashmapeja yms. Eli että ratkaisu osuus tästä labyrintistä ei toteutuisi aivan kurssin vaatimusten mukaan, mutta että tuossa labyrintin luomispuolella kuitenkin olisi hyödynnetty algoritmiä ja toteutettu se ilman funktioita? Mikäli tämä on mahdollista niin voisin seuraavaksi keskittyä testeihin, sillä ne ovat minulle täysin tuntematon aihe ja varmasti saan uppoamaan niihinkin todella paljon aikaa. Toki jos onnistuisin saamaan testit aikaisin nopeasti voisin sitten kokeilla vielä saada toteutettua myös tuon ratkaisualgoritmin ilman hashmapeja yms. Ja tehdä myös sille puolelle testit. Mutta mikäli tästä kurssista voi saada edes 1/5 toteuttamalla vain yhden algoritmin ja riittävät testaukset, niin voisin seuraavaksi lähteä tavoittelemaan sitä. 
 
-Luojan kiitos nyt on vasta tiistai. Pelkäsin jo, että on keskiviikko. Noh. Tänään olen miettinyt mm. PolkuPuu.java -tiedoston funktioita. Siellä on Collections.shuffle(reunat); joka pitäisi saada pois tuosta Collectionsista. luoReunat() funktio palauttaa Listin. Olen selvittänyt, että taulukoihin pystyy kyllä tallentamaan myös itse keksittyjä olioita, ei vain Stringejä, Charreja ja Intejä. Joten Rajoja pystyy tallentamaan myös taulukkoon. Tuo funktio luoReunat tallentaa tällä hetkellä niitä ArrayListeihin. Pitäisi saada muutettua niin, että se tallentaa niitä taulukoihin. Mietin vielä, teenkö kokonaan uuden tiedoston, johon kokeilen näitä uusia vai alkanko kommentoida noita vanhoja metodeja pois ja kokeilen tuossa samassa tiedostossa rakentaa hommaa eteenpäin taulukoilla. Ekana mun pitää varmastikin kerrata taulukot. Miten niihin lisättiin jne. Mitä taulukoilla voi tehdä, jotta voin käyttää niitä hyödyllisesti tässä. Olen jo unohtanut nämä, sillä kävin ohjelmoinnin perusteet vuonna 2016. 
-
-Edellä mainittujen lisäksi tuolla samassa PolkuPuu-tiedostossa on metodissa luoViritettyPuu return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList()); näköinen hirviö. Tuo pitää jossain vaiheessa myös saada auki, mutta aloitan ehkä noista ArrayListit taulukoiksi asioista. Metodissa luoPolut on myös hämmennystä aiheuttava
- 
-//            viritettyPuu.stream().map(raja -> {
-//                var eka = indeksista(raja.getEkaPala());
-//                var toka = indeksista(raja.getTokaPala());
-//                return getPolku(eka, toka);
-//            }).collect(toList());
-//    }
-
-Tässäkin viritetty puu on List muotoinen, joten se pitää muuttaa taulukoksi.
-
-Keskiviikko
-
-Muuttelin Polkupuu-tiedoston Arraylistejä taulukoiksi. Tein tämän omassa branchissään Visual Studio Codella. En tiedä uskallanko enää pushailla ja pullailla menemään, etten menetä mitään. Pitäisi kerrata, miten nämä branchit toimii. 
-
-Torstai
-
-Tänään on avannut Polkupuu tiedoston funktioita collection.shuffle sellaiseksi, että se toimisi taulukoilla.
-Lisäksi olen työstänyt sen luoViritettyPuu metodia sellaiseksi, että se toimisi taulukoilla ja ilman stream.filter --> collect(toList()) funktioita.
+# Kurssiin käytetty työaika tällä viikolla
+n. 20 h
