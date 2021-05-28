@@ -48,10 +48,13 @@ public class PolkuPuu {
             rajat[leveys+rivi-1]=(new Raja(indeksiin(rivi, 0), indeksiin(rivi - 1, 0)));
         }
         
+        int apu = 0;
         for (int rivi = 1; rivi < korkeus; rivi++) {
             for (int sarake = 1; sarake < leveys; sarake++) {
-                rajat[leveys+korkeus+sarake-1]=(new Raja(indeksiin(rivi, sarake), indeksiin(rivi, sarake-1)));
-                rajat[leveys+korkeus+leveys+sarake-1]=(new Raja(indeksiin(rivi, sarake), indeksiin(rivi-1, sarake)));
+                rajat[leveys+korkeus+apu]=(new Raja(indeksiin(rivi, sarake), indeksiin(rivi, sarake-1)));
+                apu++;
+                rajat[leveys+korkeus+apu]=(new Raja(indeksiin(rivi, sarake), indeksiin(rivi-1, sarake)));
+                apu++;
             }
         }
         return rajat;
