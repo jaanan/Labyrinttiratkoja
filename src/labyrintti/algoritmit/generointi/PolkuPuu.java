@@ -86,7 +86,8 @@ public class PolkuPuu {
         Raja[] truerajat = new Raja[rajat.length];
         int apu = 0;
         for (int i = 0; i < rajat.length; i++) {
-            if (connects(rajat[i], erotteleOsat)){
+            var raja = rajat[i];
+            if (connects(raja, erotteleOsat)){
                 // miten vois välttää, että tänne ei jää tyhjiä väliin? apumuuttujalla?
                 truerajat[i]=rajat[i];
                 apu++;
