@@ -45,6 +45,8 @@ public class Konsoli {
             } catch (InputMismatchException e) {
                 System.out.println("Virheellinen valinta. Ole mieliksi ja koita uudelleen.");
             } catch (Exception e) {
+                // lisätään e.printStackTrace();
+                e.printStackTrace();
                 System.out.println("Tuntematon erhe");
             }
         }
