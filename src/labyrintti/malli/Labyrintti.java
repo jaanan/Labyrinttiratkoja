@@ -98,6 +98,10 @@ public class Labyrintti {
     }
 
     // luodaan sattumanvaraisia kulkukäytäviä 
+    // masterissa tämä metodi on luotu näin:
+    //     private void luoTiet() {
+    //    new PolkuPuu(korkeus, leveys).generoi().forEach(asetaPala());
+    // }
   
     private void luoTiet() {
         PolkuPuu pp = new PolkuPuu(korkeus, leveys);
