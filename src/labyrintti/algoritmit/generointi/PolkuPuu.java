@@ -107,7 +107,9 @@ public class PolkuPuu {
     // Testataan, yhdistääkö raja polkuja
 
     private boolean connects(Raja raja, ErotetutOsat erotetutOsat) {
-        return erotetutOsat.yhdistys(raja.getEkaPala(), raja.getTokaPala());
+        var eka = raja.getEkaPala();
+        var toka = raja.getTokaPala();
+        return erotetutOsat.yhdistys(eka, toka);
     }
 
     // Lista paloista, jotka yhdistävät polkuja
