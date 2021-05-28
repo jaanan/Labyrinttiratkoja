@@ -87,11 +87,15 @@ public class PolkuPuu {
         int apu = 0;
         for (int i = 0; i < rajat.length; i++) {
             var raja = rajat[i];
-            if (connects(raja, erotteleOsat)){
-                // miten vois välttää, että tänne ei jää tyhjiä väliin? apumuuttujalla?
-                truerajat[i]=rajat[i];
-                apu++;
-            }
+            if (raja != null) {
+                if (connects(raja, erotteleOsat)){
+                    // miten vois välttää, että tänne ei jää tyhjiä väliin? apumuuttujalla?
+                    truerajat[i]=rajat[i];
+                    apu++;
+                } else {
+                    i++;
+                }
+            }    
 		}
         Raja[] puunrajat = new Raja[apu];
         int index = 0;
