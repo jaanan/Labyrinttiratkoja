@@ -32,7 +32,7 @@ public class PriminAlgoritmi {
         maz[st.r][st.c] = 'S';
 
         // iterate through direct neighbors of node
-        ArrayList < Point > frontier = new ArrayList < Point > ();
+        ArrayList <Point> frontier = new ArrayList <Point> ();
         for (int x = -1; x <= 1; x++) {
             for (int y = -1; y <= 1; y++) {
                 if (x == 0 && y == 0 || x != 0 && y != 0)
@@ -52,6 +52,7 @@ public class PriminAlgoritmi {
         // pick current node at random
         Point cu = frontier.remove((int)(Math.random() * frontier.size()));
         Point op = cu.opposite();
+        last = op;
             try {
                 // if both node and its opposite are walls
                 if (maz[cu.r][cu.c] == '*') {
@@ -82,7 +83,7 @@ public class PriminAlgoritmi {
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             }
         }
-//        maz[last.r][last.c] = 'E';
+        maz[last.r][last.c] = 'E';
     }
 }
 
