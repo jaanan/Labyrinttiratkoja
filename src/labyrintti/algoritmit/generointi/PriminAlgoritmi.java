@@ -102,10 +102,11 @@ public class PriminAlgoritmi {
         StringBuilder alin = new StringBuilder(korkeus*leveys);
         this.tulosta = new StringBuilder(korkeus*leveys);
         for (int i = 0; i < korkeus; i++) {
+            tulosta.append("*");
             for (int j = 0; j < leveys; j++) {
                 tulosta.append(maz[i][j]);                    
             }
-            tulosta.append("\n");
+            tulosta.append("*\n");
         }
         for (int i = 0; i < leveys; i++) {
             if (i == 1) {
