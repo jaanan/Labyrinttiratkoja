@@ -25,74 +25,74 @@ public class PriminAlgoritmi {
 
   // select random point and open as start node
     public void prim() {
+        // select random point and open as start node
         Point st = new Point((int)(Math.random() * korkeus), (int)(Math.random() * leveys), null);
         maz[st.r][st.c] = 'S';
 
         // iterate through direct neighbors of node
-        ArrayList <Point> frontier = new ArrayList <Point>();
-        for (int x = -1; x <= 1; x++)
-        for (int y = -1; y <= 1; y++) {
-            if (x == 0 && y == 0 || x != 0 && y != 0)
-            continue;
-            try {
-            if (maz[st.r + x][st.c + y] == '.') continue;
-            } catch (Exception e) { // ignore ArrayIndexOutOfBounds
-            continue;
-            }
-            // add eligible points to frontier
-            frontier.add(new Point(st.r + x, st.c + y, st));
+        ArrayList < Point > frontier = new ArrayList < Point > ();
+        for (int x = -1; x <= 1; x++) {
+            for (int y = -1; y <= 1; y++) {
+                if (x == 0 && y == 0 || x != 0 && y != 0)
+                    continue;
+                    try {
+                        if (maz[st.r + x][st.c + y] == '.') continue;
+                    } catch (Exception e) { // ignore ArrayIndexOutOfBounds
+                        continue;
+                    }
+        // add eligible points to frontier
+        frontier.add(new Point(st.r + x, st.c + y, st));
+        }
 
         Point last = null;
         while (!frontier.isEmpty()) {
-      
-         // pick current node at random
-         Point cu = frontier.remove((int)(Math.random() * frontier.size()));
-         Point op = cu.opposite();
-         try {
-          // if both node and its opposite are walls
-            if (maz[cu.r][cu.c] == '*') {
-                if (maz[op.r][op.c] == '*') {
-      
-                // open path between the nodes
-                maz[cu.r][cu.c] = '.';
-                maz[op.r][op.c] = '.';
-      
-                // store last node in order to mark it later
-                last = op;
-      
-                 // iterate through direct neighbors of node, same as earlier
-                for (int z = -1; z <= 1; z++)
-                    for (int q = -1; q <= 1; q++) {
-                        if (z == 0 && q == 0 || z != 0 && q != 0)
-                            continue;
-                        try {
-                            if (maz[op.r + z][op.c + q] == '.') continue;
-                        } catch (Exception e) {
-                            continue;
-                        }
-                        frontier.add(new Point(op.r + z, op.c + q, op));
+
+        // pick current node at random
+        Point cu = frontier.remove((int)(Math.random() * frontier.size()));
+        Point op = cu.opposite();
+            try {
+                // if both node and its opposite are walls
+                if (maz[cu.r][cu.c] == '*') {
+                    if (maz[op.r][op.c] == '*') {
+
+                        // open path between the nodes
+                        maz[cu.r][cu.c] = '.';
+                        maz[op.r][op.c] = '.';
+
+                        // store last node in order to mark it later
+                        last = op;
+
+                        // iterate through direct neighbors of node, same as earlier
+                        for (int z = -1; z <= 1; z++) {
+                            for (int q = -1; q <= 1; q++) {
+                                if (z == 0 && q == 0 || z != 0 && q != 0) {
+                                    continue;
+                                } try {
+                                    if (maz[op.r + z][op.c + q] == '.') continue;
+                                } catch (Exception e) {
+                                        continue;
+                                }    
+                                frontier.add(new Point(op.r + z, op.c + q, op));
+                            }
+                        }    
                     }
                 }
-            }
-        } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
-            }
-            // if algorithm has resolved, mark end node
-            if (frontier.isEmpty()) {
-                maz[last.r][last.c] = 'E';
-            }
-
+            } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             }
         }
+        maz[last.r][last.c] = 'E';
     }
-            // print final maze
-            public String toString(){
-                this.tulosta = new StringBuilder(korkeus*leveys);
-                for (int i = 0; i < korkeus; i++) {
-                    for (int j = 0; j < leveys; j++)
-                    tulosta.append(maz[i][j]);                    
-                }
-                return tulosta.toString();
-            }      
+}
+
+    // print final maze
+    public String toString(){
+        this.tulosta = new StringBuilder(korkeus*leveys);
+        for (int i = 0; i < korkeus; i++) {
+            for (int j = 0; j < leveys; j++)
+                tulosta.append(maz[i][j]);                    
+            }
+        return tulosta.toString();
+    }      
 
     static class Point {
         Integer r;
