@@ -26,7 +26,9 @@ public class PriminAlgoritmi {
   // select random point and open as start node
     public void prim() {
         // select random point and open as start node
-        Point st = new Point((int)(Math.random() * korkeus), (int)(Math.random() * leveys), null);
+        int alku = 1;
+        int piste = 1;
+        Point st = new Point(alku, piste, null);
         maz[st.r][st.c] = 'S';
 
         // iterate through direct neighbors of node
