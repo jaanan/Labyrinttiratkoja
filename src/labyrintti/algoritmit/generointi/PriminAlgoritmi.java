@@ -78,11 +78,11 @@ public class PriminAlgoritmi {
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             }
         }
-        if (maz[korkeus-1][leveys-1] == '.'| maz[korkeus-2][leveys-1] == '.') {
-            maz[korkeus-1][leveys-1] = 'E';
+        if (maz[korkeus-1][leveys-2] == '.'| maz[korkeus-2][leveys-2] == '.') {
+            maz[korkeus-1][leveys-2] = 'E';
         } else {
-            maz[korkeus-1][leveys-1] = 'E';
-            maz[korkeus-2][leveys-1] = '.';    
+            maz[korkeus-1][leveys-2] = 'E';
+            maz[korkeus-2][leveys-2] = '.';    
         }
     }
 }
