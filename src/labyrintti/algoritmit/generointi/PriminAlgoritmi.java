@@ -26,7 +26,7 @@ public class PriminAlgoritmi {
   // select random point and open as start node
     public void prim() {
         // select random point and open as start node
-        int alku = 1;
+        int alku = 0;
         int piste = 1;
         Point st = new Point(alku, piste, null);
         maz[st.r][st.c] = 'S';
