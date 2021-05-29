@@ -1,6 +1,7 @@
 package labyrintti.palvelu;
 
 import labyrintti.malli.Labyrintti;
+import labyrintti.algoritmit.generointi.PriminAlgoritmi;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,6 +19,8 @@ public class Konsoli {
     private Scanner scanner;
     private Labyrintti labyrintti;
     private boolean onkolabyrinttiSaatavilla = false;
+    private int korkeus;
+    private int leveys;
 
 
     // konsolin käynnistys
@@ -73,15 +76,20 @@ public class Konsoli {
         if (split.length == 1) {
             var koko = parseInt(split[0]);
             labyrintti = new Labyrintti(koko);
+            this.korkeus = koko;
+            this.leveys = koko;
         } else if (split.length == 2) {
             var korkeus = parseInt(split[0]);
             var leveys = parseInt(split[1]);
             labyrintti = new Labyrintti(korkeus, leveys);
+            this.korkeus = korkeus;
+            this.leveys = leveys;
         } else {
             System.out.println("Antamasi koko ei kelpaa.");
         }
         onkolabyrinttiSaatavilla = true;
         tulosta();
+        new PriminAlgoritmi(korkeus, leveys).generoi();
     }
   
       // Tulostaa labyrintin
