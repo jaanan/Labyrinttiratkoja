@@ -20,6 +20,7 @@ public class PriminAlgoritmi {
         for (int x = 0; x < leveys; x++)
         sb.append('*');
         for (int x = 0; x < korkeus; x++) maz[x] = sb.toString().toCharArray();
+        prim();
     }    
 
   // select random point and open as start node
