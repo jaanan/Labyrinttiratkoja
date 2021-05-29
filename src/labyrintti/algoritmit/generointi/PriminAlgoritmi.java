@@ -52,7 +52,6 @@ public class PriminAlgoritmi {
         // pick current node at random
         Point cu = frontier.remove((int)(Math.random() * frontier.size()));
         Point op = cu.opposite();
-        last = op;
             try {
                 // if both node and its opposite are walls
                 if (maz[cu.r][cu.c] == '*') {
@@ -80,10 +79,13 @@ public class PriminAlgoritmi {
                         }    
                     }
                 }
+                if (frontier.isEmpty()) {
+                    maz[last.r][last.c] = 'E';
+                }    
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             }
         }
-        maz[last.r][last.c] = 'E';
+//        maz[last.r][last.c] = 'E';
     }
 }
 
