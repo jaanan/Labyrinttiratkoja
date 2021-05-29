@@ -102,13 +102,15 @@ public class PriminAlgoritmi {
                 ylin.append("*");
             }
         }
+        ylin.append("\n");
         for (int i = 0; i < leveys; i++) {
             if (i == leveys-2) {
                 alin.append("E");
             } else {
                 alin.append("*");
             }
-        }    
+        }
+        alin.append("\n");    
         return ylin+tulosta.toString()+alin;
     }      
 
