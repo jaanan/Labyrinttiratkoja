@@ -82,7 +82,7 @@ public class PriminAlgoritmi {
             maz[korkeus-1][leveys-2] = 'E';
         } else {
             maz[korkeus-1][leveys-2] = 'E';
-            maz[korkeus-2][leveys-2] = '.';    
+//            maz[korkeus-2][leveys-2] = '.';    
         }
     }
 }
