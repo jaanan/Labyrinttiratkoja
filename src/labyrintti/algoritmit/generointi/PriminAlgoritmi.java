@@ -108,6 +108,7 @@ public class PriminAlgoritmi {
             }
             tulosta.append("*\n");
         }
+        ylin.append("*");
         for (int i = 0; i < leveys; i++) {
             if (i == 1) {
                 ylin.append("S");
@@ -115,7 +116,8 @@ public class PriminAlgoritmi {
                 ylin.append("*");
             }
         }
-        ylin.append("\n");
+        ylin.append("*\n");
+        alin.append("*\n");
         for (int i = 0; i < leveys; i++) {
             if (i == leveys-2) {
                 alin.append("E");
@@ -123,7 +125,7 @@ public class PriminAlgoritmi {
                 alin.append("*");
             }
         }
-        alin.append("\n");    
+        alin.append("*\n");    
         return ylin+tulosta.toString()+alin;
     }      
 
