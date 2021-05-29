@@ -95,7 +95,7 @@ public class Konsoli {
       // Tulostaa labyrintin
     private void tulosta() {
         System.out.println(labyrintti);
-        new PriminAlgoritmi(korkeus, leveys).generoi();
+        new PriminAlgoritmi(korkeus, leveys);
     }
 
     // Näyttää pakoreitin ulos labyrintistä

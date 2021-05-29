@@ -11,6 +11,7 @@ public class PriminAlgoritmi {
         this.korkeus = korkeus;
         this.leveys = leveys;
         this.maz = new char[korkeus][leveys];
+        generoi();
     }    
     public void generoi() {
           // build maze and initialize with only walls
