@@ -1,6 +1,5 @@
 package labyrintti.malli;
 
-import labyrintti.algoritmit.generointi.PriminAlgoritmi;
 import labyrintti.algoritmit.generointi.PolkuPuu;
 import labyrintti.algoritmit.generointi.PriminAlgoritmi;
 import labyrintti.algoritmit.ratkaisu.Ratkoja;
@@ -48,6 +47,7 @@ public class Labyrintti {
         sovitaRakoihin();
         teeOvet();
         luoTiet();
+        new PriminAlgoritmi(korkeus, leveys).generoi();
     }
 
     // ilmeiesesti tuon tyypin saa sisällytettyä tänne näin, vaikka se ei ole Integer
