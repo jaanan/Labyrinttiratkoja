@@ -80,12 +80,14 @@ public class PriminAlgoritmi {
         }
         if (frontier.isEmpty() && maz[korkeus-1][leveys-2] == '*') {
             maz[korkeus-1][leveys-2] = '.';
-            if (maz[korkeus-1][leveys-3] == '.'| maz[korkeus-2][leveys-2] == '.'| maz[korkeus-1][leveys-1] == '.' ) continue;   
-        } else if (maz[korkeus-2][leveys-3] == '.') {
-            maz[korkeus-1][leveys-3] = '.';
-        } else {
-            maz[korkeus-1][leveys-1] = '.';    
-        }
+            if (maz[korkeus-1][leveys-3] == '*'&& maz[korkeus-2][leveys-2] == '*' && maz[korkeus-1][leveys-1] == '*' ) {
+                if (maz[korkeus-2][leveys-3] == '.') {
+                    maz[korkeus-1][leveys-3] = '.';
+                } else if (maz[korkeus-2][leveys-1] == '.') {
+                    maz[korkeus-1][leveys-1] = '.';    
+                }
+            }
+        }        
     }
 }
 
