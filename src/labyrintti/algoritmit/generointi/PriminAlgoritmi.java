@@ -85,6 +85,8 @@ public class PriminAlgoritmi {
                     maz[korkeus-1][leveys-3] = '.';
                 } else if (maz[korkeus-2][leveys-1] == '.') {
                     maz[korkeus-1][leveys-1] = '.';    
+                } else {
+                    maz[korkeus-2][leveys-1] = '.';      
                 }
             }
         }        
