@@ -21,6 +21,7 @@ public class Konsoli {
     private boolean onkolabyrinttiSaatavilla = false;
     private int korkeus;
     private int leveys;
+    private PriminAlgoritmi primi;
 
 
     // konsolin käynnistys
@@ -95,7 +96,8 @@ public class Konsoli {
       // Tulostaa labyrintin
     private void tulosta() {
         System.out.println(labyrintti);
-        new PriminAlgoritmi(korkeus, leveys);
+        primi = new PriminAlgoritmi(korkeus, leveys);
+        System.out.println(primi);
     }
 
     // Näyttää pakoreitin ulos labyrintistä

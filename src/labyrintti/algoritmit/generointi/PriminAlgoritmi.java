@@ -5,6 +5,7 @@ public class PriminAlgoritmi {
     private int korkeus;
     private int leveys;
     private char [][] maz;
+    private StringBuilder tulosta;
 
     public PriminAlgoritmi(int korkeus, int leveys) {
         // dimensions of generated maze
@@ -48,46 +49,47 @@ public class PriminAlgoritmi {
          Point op = cu.opposite();
          try {
           // if both node and its opposite are walls
-          if (maz[cu.r][cu.c] == '*') {
-           if (maz[op.r][op.c] == '*') {
+            if (maz[cu.r][cu.c] == '*') {
+                if (maz[op.r][op.c] == '*') {
       
-            // open path between the nodes
-            maz[cu.r][cu.c] = '.';
-            maz[op.r][op.c] = '.';
+                // open path between the nodes
+                maz[cu.r][cu.c] = '.';
+                maz[op.r][op.c] = '.';
       
-            // store last node in order to mark it later
-            last = op;
+                // store last node in order to mark it later
+                last = op;
       
-            // iterate through direct neighbors of node, same as earlier
-            for (int z = -1; z <= 1; z++)
-             for (int q = -1; q <= 1; q++) {
-              if (z == 0 && q == 0 || z != 0 && q != 0)
-               continue;
-              try {
-               if (maz[op.r + z][op.c + q] == '.') continue;
-              } catch (Exception e) {
-               continue;
-              }
-              frontier.add(new Point(op.r + z, op.c + q, op));
-             }
-           }
-          }
-         } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
-         }
-      
-         // if algorithm has resolved, mark end node
-         if (frontier.isEmpty())
-          maz[last.r][last.c] = 'E';
+                 // iterate through direct neighbors of node, same as earlier
+                for (int z = -1; z <= 1; z++)
+                    for (int q = -1; q <= 1; q++) {
+                        if (z == 0 && q == 0 || z != 0 && q != 0)
+                            continue;
+                        try {
+                            if (maz[op.r + z][op.c + q] == '.') continue;
+                        } catch (Exception e) {
+                            continue;
+                        }
+                        frontier.add(new Point(op.r + z, op.c + q, op));
+                    }
+                }
+            }
+        } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
+            }
+            // if algorithm has resolved, mark end node
+            if (frontier.isEmpty())
+            maz[last.r][last.c] = 'E';
+            }
         }
-      
-        // print final maze
-        for (int i = 0; i < korkeus; i++) {
-         for (int j = 0; j < leveys; j++)
-          System.out.print(maz[i][j]);
-         System.out.println();
-        }
-       }
-    }     
+    }
+            // print final maze
+            public String toString(){
+                this.tulosta = new StringBuilder(korkeus*leveys);
+                for (int i = 0; i < korkeus; i++) {
+                    for (int j = 0; j < leveys; j++)
+                    tulosta.append(maz[i][j]);                    
+                }
+                return tulosta.toString();
+            }      
 
     static class Point {
         Integer r;
