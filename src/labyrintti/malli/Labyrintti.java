@@ -1,6 +1,8 @@
 package labyrintti.malli;
 
+import labyrintti.algoritmit.generointi.PriminAlgoritmi;
 import labyrintti.algoritmit.generointi.PolkuPuu;
+import labyrintti.algoritmit.generointi.PriminAlgoritmi;
 import labyrintti.algoritmit.ratkaisu.Ratkoja;
 
 import java.util.function.Consumer;
@@ -101,6 +103,7 @@ public class Labyrintti {
   
     private void luoTiet() {
         new PolkuPuu(korkeus, leveys).generoi().forEach(asetaPala());
+        new PriminAlgoritmi(korkeus, leveys).generoi();
     }
 
 
