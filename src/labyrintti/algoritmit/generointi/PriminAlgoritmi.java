@@ -46,7 +46,6 @@ public class PriminAlgoritmi {
         frontier.add(new Point(st.r + x, st.c + y, st));
         }
 
-        Point last = null;
         while (!frontier.isEmpty()) {
 
         // pick current node at random
@@ -54,15 +53,12 @@ public class PriminAlgoritmi {
         Point op = cu.opposite();
             try {
                 // if both node and its opposite are walls
-                if (maz[cu.r][cu.c] == '*') {
+                if (maz[cu.r][cu.c] == '*') { // mites näihin if lauseisiin sai sen tai merkin? | ehkä
                     if (maz[op.r][op.c] == '*') {
 
                         // open path between the nodes
                         maz[cu.r][cu.c] = '.';
                         maz[op.r][op.c] = '.';
-
-                        // store last node in order to mark it later
-                        last = op;
 
                         // iterate through direct neighbors of node, same as earlier
                         for (int z = -1; z <= 1; z++) {
@@ -78,14 +74,16 @@ public class PriminAlgoritmi {
                             }
                         }    
                     }
-                }
-                if (frontier.isEmpty()) {
-                    maz[last.r][last.c] = 'E';
-                }    
+                } 
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             }
         }
-//        maz[last.r][last.c] = 'E';
+        if (maz[korkeus-1][leveys-1] == '.'| maz[korkeus-2][leveys-1] == '.') {
+            maz[korkeus-1][leveys-1] = 'E';
+        } else {
+            maz[korkeus-1][leveys-1] = 'E';
+            maz[korkeus-2][leveys-1] = '.';    
+        }
     }
 }
 
