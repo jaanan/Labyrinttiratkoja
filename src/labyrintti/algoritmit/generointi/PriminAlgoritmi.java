@@ -104,12 +104,12 @@ public class PriminAlgoritmi {
         }
         for (int i = 0; i < leveys; i++) {
             if (i == leveys-2) {
-                ylin.append("E");
+                alin.append("E");
             } else {
-                ylin.append("*");
+                alin.append("*");
             }
         }    
-        return alin+tulosta.toString()+ylin;
+        return ylin+tulosta.toString()+alin;
     }      
 
     static class Point {
