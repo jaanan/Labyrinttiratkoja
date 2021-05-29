@@ -88,10 +88,12 @@ public class PriminAlgoritmi {
     public String toString(){
         this.tulosta = new StringBuilder(korkeus*leveys);
         for (int i = 0; i < korkeus; i++) {
-            for (int j = 0; j < leveys; j++)
+            for (int j = 0; j < leveys; j++) {
                 tulosta.append(maz[i][j]);                    
             }
-        return tulosta.toString();
+        }
+        String p = tulosta.substring(this.korkeus, tulosta.length());    
+        return p;
     }      
 
     static class Point {
