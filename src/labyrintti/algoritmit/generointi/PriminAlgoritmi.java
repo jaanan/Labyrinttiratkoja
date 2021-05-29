@@ -18,7 +18,7 @@ public class PriminAlgoritmi {
         StringBuilder sb = new StringBuilder(leveys);
         for (int x = 0; x < leveys; x++)
         sb.append('*');
-        for (int x = 0; x < korkeus; x++) maz[korkeus] = sb.toString().toCharArray();
+        for (int x = 0; x < korkeus; x++) maz[x] = sb.toString().toCharArray();
     }    
 
   // select random point and open as start node
