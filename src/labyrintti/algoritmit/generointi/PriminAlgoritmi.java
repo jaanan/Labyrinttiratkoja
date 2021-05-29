@@ -117,7 +117,7 @@ public class PriminAlgoritmi {
             }
         }
         ylin.append("*\n");
-        alin.append("*\n");
+        alin.append("*");
         for (int i = 0; i < leveys; i++) {
             if (i == leveys-2) {
                 alin.append("E");
