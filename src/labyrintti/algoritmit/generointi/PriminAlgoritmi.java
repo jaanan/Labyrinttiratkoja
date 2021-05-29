@@ -78,9 +78,9 @@ public class PriminAlgoritmi {
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             }
         }
-//         if (maz[korkeus-1][leveys-2] == '*') {
-//            generoi();
-//        } 
+         if (maz[korkeus-1][leveys-2] == '*') {
+            prim();
+        } 
     }
 }
 
