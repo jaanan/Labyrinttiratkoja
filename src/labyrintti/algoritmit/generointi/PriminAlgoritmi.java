@@ -80,7 +80,7 @@ public class PriminAlgoritmi {
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             }
         }
-        maz[last.r][last.c] = 'E';
+//        maz[last.r][last.c] = 'E';
     }
 }
 
