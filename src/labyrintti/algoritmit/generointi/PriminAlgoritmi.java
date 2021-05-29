@@ -91,7 +91,7 @@ public class PriminAlgoritmi {
             for (int j = 0; j < leveys; j++) {
                 tulosta.append(maz[i][j]);                    
             }
-            tulosta.append("/n");
+            tulosta.append("\n");
         }   
         return tulosta.toString();
     }      
