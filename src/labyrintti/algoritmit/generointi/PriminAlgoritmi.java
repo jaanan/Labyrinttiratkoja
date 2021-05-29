@@ -77,8 +77,10 @@ public class PriminAlgoritmi {
         } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             }
             // if algorithm has resolved, mark end node
-            if (frontier.isEmpty())
-            maz[last.r][last.c] = 'E';
+            if (frontier.isEmpty()) {
+                maz[last.r][last.c] = 'E';
+            }
+
             }
         }
     }
@@ -111,4 +113,3 @@ public class PriminAlgoritmi {
         }
     }   
 }
-
