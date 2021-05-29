@@ -48,6 +48,7 @@ public class Konsoli {
             } catch (InputMismatchException e) {
                 System.out.println("Virheellinen valinta. Ole mieliksi ja koita uudelleen.");
             } catch (Exception e) {
+                e.printStackTrace();
                 System.out.println("Tuntematon erhe");
             }
         }
@@ -89,12 +90,12 @@ public class Konsoli {
         }
         onkolabyrinttiSaatavilla = true;
         tulosta();
-        new PriminAlgoritmi(korkeus, leveys).generoi();
     }
   
       // Tulostaa labyrintin
     private void tulosta() {
         System.out.println(labyrintti);
+        new PriminAlgoritmi(korkeus, leveys).generoi();
     }
 
     // Näyttää pakoreitin ulos labyrintistä
