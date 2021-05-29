@@ -29,7 +29,7 @@ public class PriminAlgoritmi {
         int alku = 0;
         int piste = 1;
         Point st = new Point(alku, piste, null);
-        maz[st.r][st.c] = 'S';
+//        maz[st.r][st.c] = 'S';
 
         // iterate through direct neighbors of node
         ArrayList <Point> frontier = new ArrayList <Point> ();
@@ -78,25 +78,38 @@ public class PriminAlgoritmi {
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             }
         }
-        if (maz[korkeus-1][leveys-2] == '.'| maz[korkeus-2][leveys-2] == '.') {
-            maz[korkeus-1][leveys-2] = 'E';
-        } else {
-            maz[korkeus-1][leveys-2] = 'E';
-//            maz[korkeus-2][leveys-2] = '.';    
-        }
+        if (maz[korkeus-1][leveys-2] == '*') {
+            generoi();
+        } 
     }
 }
 
     // print final maze
     public String toString(){
+        StringBuilder ylin = new StringBuilder(leveys);
+        StringBuilder alin = new StringBuilder(korkeus*leveys);
         this.tulosta = new StringBuilder(korkeus*leveys);
         for (int i = 0; i < korkeus; i++) {
             for (int j = 0; j < leveys; j++) {
                 tulosta.append(maz[i][j]);                    
             }
             tulosta.append("\n");
-        }   
-        return tulosta.toString();
+        }
+        for (int i = 0; i < leveys; i++) {
+            if (i == 1) {
+                ylin.append("S");
+            } else {
+                ylin.append("*");
+            }
+        }
+        for (int i = 0; i < leveys; i++) {
+            if (i == leveys-2) {
+                ylin.append("E");
+            } else {
+                ylin.append("*");
+            }
+        }    
+        return alin+tulosta.toString()+ylin;
     }      
 
     static class Point {
