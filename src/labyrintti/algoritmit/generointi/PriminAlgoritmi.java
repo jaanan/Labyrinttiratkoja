@@ -91,9 +91,9 @@ public class PriminAlgoritmi {
             for (int j = 0; j < leveys; j++) {
                 tulosta.append(maz[i][j]);                    
             }
-        }
-        String p = tulosta.substring(this.korkeus, tulosta.length());    
-        return p;
+            tulosta.append("/n");
+        }   
+        return tulosta.toString();
     }      
 
     static class Point {
