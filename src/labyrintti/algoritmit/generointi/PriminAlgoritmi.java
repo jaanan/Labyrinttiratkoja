@@ -8,14 +8,14 @@ public class PriminAlgoritmi {
     private StringBuilder tulosta;
 
     public PriminAlgoritmi(int korkeus, int leveys) {
-        // dimensions of generated maze
+        // gemeroitavan sokkelon mitat
         this.korkeus = korkeus;
         this.leveys = leveys;
         this.maz = new char[korkeus][leveys];
         generoi();
     }    
     public void generoi() {
-          // build maze and initialize with only walls
+          // rakennetaan sokkelo ja alustetaan se seinillä
         StringBuilder sb = new StringBuilder(leveys);
         for (int x = 0; x < leveys; x++)
         sb.append('*');
@@ -23,15 +23,14 @@ public class PriminAlgoritmi {
         prim();
     }    
 
-  // select random point and open as start node
     public void prim() {
-        // select random point and open as start node
+        // valitaan alkupiste
         int alku = 0;
         int piste = 1;
         Point st = new Point(alku, piste, null);
 //        maz[st.r][st.c] = 'S';
 
-        // iterate through direct neighbors of node
+        // iteroidaan solmun suorat naapurit läpi
         ArrayList <Point> frontier = new ArrayList <Point> ();
         for (int x = -1; x <= 1; x++) {
             for (int y = -1; y <= 1; y++) {
@@ -42,25 +41,25 @@ public class PriminAlgoritmi {
                     } catch (Exception e) { // ignore ArrayIndexOutOfBounds
                         continue;
                     }
-        // add eligible points to frontier
+        // lisätään kelvolliset solmut rajalle
         frontier.add(new Point(st.r + x, st.c + y, st));
         }
 
         while (!frontier.isEmpty()) {
 
-        // pick current node at random
+        // valitaan nykyinen solmu sattumanvaraisesti
         Point cu = frontier.remove((int)(Math.random() * frontier.size()));
         Point op = cu.opposite();
             try {
-                // if both node and its opposite are walls
+                // jos sekä solmu että sen vastakkainen solmu ovat muuria 
                 if (maz[cu.r][cu.c] == '*') { // mites näihin if lauseisiin sai sen tai merkin? | ehkä
                     if (maz[op.r][op.c] == '*') {
 
-                        // open path between the nodes
+                        // avataan solmujen välille polku
                         maz[cu.r][cu.c] = '.';
                         maz[op.r][op.c] = '.';
 
-                        // iterate through direct neighbors of node, same as earlier
+                        // iteroidaan solmun suorat naapurit, sama kuin aiemmin
                         for (int z = -1; z <= 1; z++) {
                             for (int q = -1; q <= 1; q++) {
                                 if (z == 0 && q == 0 || z != 0 && q != 0) {
@@ -96,7 +95,7 @@ public class PriminAlgoritmi {
     }
 }
 
-    // print final maze
+    // tulostetaan lopullinen maze
     public String toString(){
         StringBuilder ylin = new StringBuilder(leveys);
         StringBuilder alin = new StringBuilder(korkeus*leveys);
@@ -138,7 +137,7 @@ public class PriminAlgoritmi {
             c = y;
             parent = p;
             }
-    // compute opposite node given that it is in the other direction from the parent
+    // lasketaan, onko annettu vastakkainen solmu eri suuntaan parent-solmusta katsottuna.
         public Point opposite() {
             if (this.r.compareTo(parent.r) != 0)
                 return new Point(this.r + this.r.compareTo(parent.r), this.c, this);
