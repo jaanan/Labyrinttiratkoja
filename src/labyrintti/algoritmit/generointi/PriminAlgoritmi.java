@@ -1,27 +1,31 @@
 package labyrintti.algoritmit.generointi;
 import java.util.*;
+import labyrintti.malli.Pala;
 
 public class PriminAlgoritmi {
     private int korkeus;
     private int leveys;
     private char [][] maz;
     private StringBuilder tulosta;
+    private Pala[] palaset;
 
     public PriminAlgoritmi(int korkeus, int leveys) {
         // gemeroitavan sokkelon mitat
         this.korkeus = korkeus;
         this.leveys = leveys;
         this.maz = new char[korkeus][leveys];
-        generoi();
+        this.palaset = new Pala[korkeus*leveys];
+//        generoi();
     }    
-    public void generoi() {
-          // rakennetaan sokkelo ja alustetaan se seinillä
-        StringBuilder sb = new StringBuilder(leveys);
-        for (int x = 0; x < leveys; x++)
-        sb.append('*');
-        for (int x = 0; x < korkeus; x++) maz[x] = sb.toString().toCharArray();
-        prim();
-    }    
+    public Pala[] generoi() {
+        // rakennetaan sokkelo ja alustetaan se seinillä
+      StringBuilder sb = new StringBuilder(leveys);
+      for (int x = 0; x < leveys; x++)
+      sb.append('*');
+      for (int x = 0; x < korkeus; x++) maz[x] = sb.toString().toCharArray();
+//      prim();
+      return this.palaset;
+  }    
 
     public void prim() {
         // valitaan alkupiste
