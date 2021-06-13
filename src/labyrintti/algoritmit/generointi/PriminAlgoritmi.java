@@ -1,38 +1,59 @@
 package labyrintti.algoritmit.generointi;
 import java.util.*;
 import labyrintti.malli.Pala;
+import static labyrintti.malli.Pala.Tyyppi.KULKU;
+import static labyrintti.malli.Pala.Tyyppi.MUURI;
+
+// TÄTÄ EI OLE VIELÄ YHDISTETTY LABYRINTTIIN
 
 public class PriminAlgoritmi {
     private int korkeus;
     private int leveys;
     private char [][] maz;
     private StringBuilder tulosta;
-    private Pala[] palaset;
+    private Pala alku;
+    private Pala loppu;
 
     public PriminAlgoritmi(int korkeus, int leveys) {
         // gemeroitavan sokkelon mitat
         this.korkeus = korkeus;
         this.leveys = leveys;
         this.maz = new char[korkeus][leveys];
-        this.palaset = new Pala[korkeus*leveys];
-//        generoi();
     }    
     public Pala[] generoi() {
-        // rakennetaan sokkelo ja alustetaan se seinillä
-      StringBuilder sb = new StringBuilder(leveys);
-      for (int x = 0; x < leveys; x++)
-      sb.append('*');
-      for (int x = 0; x < korkeus; x++) maz[x] = sb.toString().toCharArray();
-//      prim();
-      return this.palaset;
-  }    
+    // rakennetaan sokkelo ja alustetaan se seinillä
+    StringBuilder sb = new StringBuilder(leveys);
+    for (int x = 0; x < leveys; x++)
+    sb.append('*');
+    for (int x = 0; x < korkeus; x++) maz[x] = sb.toString().toCharArray();
+    prim();
+    var i = 0;
+    Pala[] primmaze = new Pala[korkeus*leveys];
+        for(int x = 0; x < korkeus; x++) {
+            for(int y = 0; y < leveys; y++){
+                if (maz[x][y] == '*'){
+                    primmaze[i] = new Pala(x, y, MUURI);
+                    i++;
+                } else if (maz[x][y] == 'S') {
+                    alku = new Pala(x, y, KULKU);
+                    primmaze[i] = alku;
+                } else if (maz[x][y] == 'E') {
+                    loppu = new Pala(x, y, KULKU);
+                    primmaze[i] = loppu;
+                } else {
+                    primmaze[i] = new Pala(x, y, KULKU);
+                }
+            }
+        }
+    return primmaze;
+    }    
 
     public void prim() {
         // valitaan alkupiste
         int alku = 0;
         int piste = 1;
         Point st = new Point(alku, piste, null);
-//        maz[st.r][st.c] = 'S';
+        maz[st.r][st.c] = 'S';
 
         // iteroidaan solmun suorat naapurit läpi
         ArrayList <Point> frontier = new ArrayList <Point> ();
@@ -79,24 +100,12 @@ public class PriminAlgoritmi {
                     }
                 } 
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
-            }
-        }
-        if (frontier.isEmpty() && maz[korkeus-1][leveys-2] == '*') {
-            maz[korkeus-1][leveys-2] = '.';
-        }
-
-        if (maz[korkeus-1][leveys-3] == '*' && maz[korkeus-2][leveys-2] == '*' && maz[korkeus-1][leveys-1] == '*' && maz[korkeus-2][leveys-3] == '.') {
-            maz[korkeus-1][leveys-3] = '.';
-        }
-            
-        if (maz[korkeus-1][leveys-3] == '*' && maz[korkeus-2][leveys-2] == '*' && maz[korkeus-1][leveys-1] == '*' && maz[korkeus-2][leveys-1] == '.') {
-            maz[korkeus-1][leveys-1] = '.';    
-        } 
-        
-        if (maz[korkeus-1][leveys-3] == '*' && maz[korkeus-2][leveys-2] == '*' && maz[korkeus-1][leveys-1] == '*' && maz[korkeus-3][leveys-2] == '.') {
-            maz[korkeus-2][leveys-1] = '.';      
-        }        
+            } if (frontier.isEmpty()) {
+                maz[op.r][op.c] = 'E';
+            } 
+        }          
     }
+
 }
 
     // tulostetaan lopullinen maze
