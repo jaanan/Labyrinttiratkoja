@@ -17,6 +17,7 @@ public class Labyrintti {
     private int korkeus;
     private int leveys;
     private Pala[][] ruudukko;
+    private Pala[][] priminruudukko;
 
     // varmistetaan, ettei tehdä turhaa työtä
 
@@ -30,6 +31,7 @@ public class Labyrintti {
         this.korkeus = korkeus;
         this.leveys = leveys;
         ruudukko = new Pala[korkeus][leveys];
+        priminruudukko = new Pala[korkeus][leveys];
         sovitaRuudukkoon();
     }
 
