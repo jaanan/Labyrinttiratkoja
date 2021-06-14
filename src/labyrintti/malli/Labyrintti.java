@@ -1,5 +1,6 @@
 package labyrintti.malli;
 
+import labyrintti.algoritmit.generointi.PriminAlgoritmi;
 import labyrintti.algoritmit.generointi.PolkuPuu;
 import labyrintti.algoritmit.ratkaisu.Ratkoja;
 
