@@ -111,7 +111,7 @@ public class PriminAlgoritmi {
                  System.out.print(maz[i][j]);
                 System.out.println();
             }
-        }          
+        }
     }
 
 }
