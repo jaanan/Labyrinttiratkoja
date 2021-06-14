@@ -1,5 +1,5 @@
 package labyrintti.malli;
-import labyrintti.algoritmit.generointi.PriminAlgoritmi;
+
 import labyrintti.algoritmit.generointi.PolkuPuu;
 import labyrintti.algoritmit.ratkaisu.Ratkoja;
 
@@ -9,14 +9,13 @@ import static java.lang.Integer.parseInt;
 import static labyrintti.malli.Pala.Tyyppi.KULKU;
 import static labyrintti.malli.Pala.Tyyppi.MUURI;
 
-//  Luokka käsittelee labyrintin luomista ja hallintaa
+//  Luokka käsittelee labyrintin luomista ja hallintaa
 
 public class Labyrintti {
 
     private int korkeus;
     private int leveys;
     private Pala[][] ruudukko;
-    private Pala[][] priminruudukko;
 
     // varmistetaan, ettei tehdä turhaa työtä
 
@@ -30,7 +29,6 @@ public class Labyrintti {
         this.korkeus = korkeus;
         this.leveys = leveys;
         ruudukko = new Pala[korkeus][leveys];
-        priminruudukko = new Pala[korkeus][leveys];
         sovitaRuudukkoon();
     }
 
@@ -112,12 +110,6 @@ public class Labyrintti {
             var pala = pppalat[i];
             ruudukko[pala.getRivi()][pala.getSarake()]= pala;
         }
-//        PriminAlgoritmi pa = new PriminAlgoritmi(korkeus, leveys);
-//        var papalat = pa.generoi();
-//        for (int i = 0; i < papalat.length; i++) {
-//            var pala = papalat[i];
-//            priminruudukko[pala.getRivi()][pala.getSarake()]= pala;
-//        }
     }
 
     private Consumer<Pala> asetaPala() {
@@ -133,14 +125,12 @@ public class Labyrintti {
     }
     
     // palauttaa sisäänkäynnin
-    // TÄÄ PITÄÄ SAADA MYÖS PRIMILLE
   
     private Pala getAstu() {
         return ruudukko[0][1];
     }
   
     // palauttaa uloskäynnin
-    //TÄÄ PITÄÄ SAADA MYÖS PRIMILLE
   
     private Pala getUlos() {
         return ruudukko[korkeus - 1][getPoistumisSarake()];
@@ -148,30 +138,11 @@ public class Labyrintti {
   
     private String toString(boolean avaaReitti) {
         var sb = new StringBuilder();
-        //TÄHÄN PITÄÄ SAADA JOKU VARIAATIO SEN SUHTEEN, ETTÄ PRINTTAAKO SE PRIMIÄ VAI KRUSKALIA
         for (var rivi : ruudukko) {
             for (var pala : rivi) {
                 if (pala.onkoMuuri()) {
                     sb.append("II");
                 } else if (avaaReitti && pala.onkoUlos()) {
-                    sb.append("  ");
-                } else {
-                    sb.append("▓▓");
-                }
-            }
-            sb.append('\n');
-        }
-        return sb.toString();
-    }
-
-    private String toprim() {
-        var sb = new StringBuilder();
-        //TÄHÄN PITÄÄ SAADA JOKU VARIAATIO SEN SUHTEEN, ETTÄ PRINTTAAKO SE PRIMIÄ VAI KRUSKALIA
-        for (var rivi : priminruudukko) {
-            for (var pala : rivi) {
-                if (pala.onkoMuuri()) {
-                    sb.append("II");
-                } else if (pala.onkoUlos()) {
                     sb.append("  ");
                 } else {
                     sb.append("▓▓");
