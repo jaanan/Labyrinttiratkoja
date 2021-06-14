@@ -89,6 +89,7 @@ public class Konsoli {
       // Tulostaa labyrintin
     private void tulosta() {
         System.out.println(labyrintti);
+//        this.labyrintti.toPrim();
     }
 
     // Näyttää pakoreitin ulos labyrintistä

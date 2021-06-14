@@ -1,5 +1,5 @@
 package labyrintti.malli;
-
+import labyrintti.algoritmit.generointi.PriminAlgoritmi;
 import labyrintti.algoritmit.generointi.PolkuPuu;
 import labyrintti.algoritmit.ratkaisu.Ratkoja;
 
@@ -16,7 +16,7 @@ public class Labyrintti {
     private int korkeus;
     private int leveys;
     private Pala[][] ruudukko;
-    private Pala[][] primin;
+    private Pala[][] priminruudukko;
 
     // varmistetaan, ettei tehdä turhaa työtä
 
@@ -30,7 +30,7 @@ public class Labyrintti {
         this.korkeus = korkeus;
         this.leveys = leveys;
         ruudukko = new Pala[korkeus][leveys];
-        primin = new Pala[korkeus][leveys];
+        priminruudukko = new Pala[korkeus][leveys];
         sovitaRuudukkoon();
     }
 
@@ -112,6 +112,12 @@ public class Labyrintti {
             var pala = pppalat[i];
             ruudukko[pala.getRivi()][pala.getSarake()]= pala;
         }
+        PriminAlgoritmi pa = new PriminAlgoritmi(korkeus, leveys);
+        var papalat = pa.generoi();
+        for (int i = 0; i < papalat.length; i++) {
+            var pala = papalat[i];
+            priminruudukko[pala.getRivi()][pala.getSarake()]= pala;
+        }
     }
 
     private Consumer<Pala> asetaPala() {
@@ -148,6 +154,24 @@ public class Labyrintti {
                 if (pala.onkoMuuri()) {
                     sb.append("II");
                 } else if (avaaReitti && pala.onkoUlos()) {
+                    sb.append("  ");
+                } else {
+                    sb.append("▓▓");
+                }
+            }
+            sb.append('\n');
+        }
+        return sb.toString();
+    }
+
+    private String toprim() {
+        var sb = new StringBuilder();
+        //TÄHÄN PITÄÄ SAADA JOKU VARIAATIO SEN SUHTEEN, ETTÄ PRINTTAAKO SE PRIMIÄ VAI KRUSKALIA
+        for (var rivi : priminruudukko) {
+            for (var pala : rivi) {
+                if (pala.onkoMuuri()) {
+                    sb.append("II");
+                } else if (pala.onkoUlos()) {
                     sb.append("  ");
                 } else {
                     sb.append("▓▓");

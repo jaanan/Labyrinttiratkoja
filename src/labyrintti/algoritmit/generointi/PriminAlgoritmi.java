@@ -37,11 +37,14 @@ public class PriminAlgoritmi {
                 } else if (maz[x][y] == 'S') {
                     alku = new Pala(x, y, KULKU);
                     primmaze[i] = alku;
+                    i++;
                 } else if (maz[x][y] == 'E') {
                     loppu = new Pala(x, y, KULKU);
                     primmaze[i] = loppu;
+                    i++;
                 } else {
                     primmaze[i] = new Pala(x, y, KULKU);
+                    i++;
                 }
             }
         }
@@ -102,7 +105,12 @@ public class PriminAlgoritmi {
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             } if (frontier.isEmpty()) {
                 maz[op.r][op.c] = 'E';
-            } 
+            }
+            for (int i = 0; i < korkeus; i++) {
+                for (int j = 0; j < leveys; j++)
+                 System.out.print(maz[i][j]);
+                System.out.println();
+            }
         }          
     }
 
