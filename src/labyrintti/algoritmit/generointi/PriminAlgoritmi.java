@@ -107,11 +107,11 @@ public class PriminAlgoritmi {
                 maz[op.r][op.c] = 'E';
             }
         } 
-        for (int i = 0; i < korkeus; i++) {
-            for (int j = 0; j < leveys; j++)
-             System.out.print(maz[i][j]);
+    }
+    for (int i = 0; i < korkeus; i++) {
+        for (int j = 0; j < leveys; j++)
+            System.out.print(maz[i][j]);
             System.out.println();
-        }
     }
 
 }
