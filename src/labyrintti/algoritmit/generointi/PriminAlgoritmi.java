@@ -106,11 +106,11 @@ public class PriminAlgoritmi {
             } if (frontier.isEmpty()) {
                 maz[op.r][op.c] = 'E';
             }
-            for (int i = 0; i < korkeus; i++) {
-                for (int j = 0; j < leveys; j++)
-                 System.out.print(maz[i][j]);
-                System.out.println();
-            }
+        } 
+        for (int i = 0; i < korkeus; i++) {
+            for (int j = 0; j < leveys; j++)
+             System.out.print(maz[i][j]);
+            System.out.println();
         }
     }
 
