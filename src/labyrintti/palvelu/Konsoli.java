@@ -1,6 +1,7 @@
 package labyrintti.palvelu;
 
 import labyrintti.malli.Labyrintti;
+import labyrintti.algoritmit.generointi.PriminAlgoritmi;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,6 +19,9 @@ public class Konsoli {
     private Scanner scanner;
     private Labyrintti labyrintti;
     private boolean onkolabyrinttiSaatavilla = false;
+    private int korkeus;
+    private int leveys;
+    private PriminAlgoritmi primi;
 
 
     // konsolin käynnistys
@@ -45,6 +49,7 @@ public class Konsoli {
             } catch (InputMismatchException e) {
                 System.out.println("Virheellinen valinta. Ole mieliksi ja koita uudelleen.");
             } catch (Exception e) {
+                e.printStackTrace();
                 System.out.println("Tuntematon erhe");
             }
         }
@@ -73,10 +78,14 @@ public class Konsoli {
         if (split.length == 1) {
             var koko = parseInt(split[0]);
             labyrintti = new Labyrintti(koko);
+            this.korkeus = koko;
+            this.leveys = koko;
         } else if (split.length == 2) {
             var korkeus = parseInt(split[0]);
             var leveys = parseInt(split[1]);
             labyrintti = new Labyrintti(korkeus, leveys);
+            this.korkeus = korkeus;
+            this.leveys = leveys;
         } else {
             System.out.println("Antamasi koko ei kelpaa.");
         }
@@ -87,6 +96,8 @@ public class Konsoli {
       // Tulostaa labyrintin
     private void tulosta() {
         System.out.println(labyrintti);
+        primi = new PriminAlgoritmi(korkeus, leveys);
+        System.out.println(primi);
     }
 
     // Näyttää pakoreitin ulos labyrintistä

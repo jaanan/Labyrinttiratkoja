@@ -46,6 +46,7 @@ public class Labyrintti {
         sovitaRakoihin();
         teeOvet();
         luoTiet();
+//        new PriminAlgoritmi(korkeus, leveys).generoi();
     }
 
     // ilmeiesesti tuon tyypin saa sisällytettyä tänne näin, vaikka se ei ole Integer
@@ -101,6 +102,7 @@ public class Labyrintti {
   
     private void luoTiet() {
         new PolkuPuu(korkeus, leveys).generoi().forEach(asetaPala());
+//        new PriminAlgoritmi(korkeus, leveys).generoi();
     }
 
 
