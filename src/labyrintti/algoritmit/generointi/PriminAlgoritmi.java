@@ -72,7 +72,7 @@ public class PriminAlgoritmi {
         // lisätään kelvolliset solmut rajalle
         frontier.add(new Point(st.r + x, st.c + y, st));
         }
-        Point vika = null;
+        Point vika;
         while (!frontier.isEmpty()) {
 
         // valitaan nykyinen solmu sattumanvaraisesti
