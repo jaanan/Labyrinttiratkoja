@@ -137,7 +137,7 @@ public class Labyrintti {
             new Ratkoja(ruudukko, getAstu(), getUlos()).etsiUlos().forEach(asetaPala());
             onRatkottu = true;
         }
-        return toKruskal(true);
+        return toString(true);
     }
 
     public String etsiPrim() {
@@ -145,7 +145,7 @@ public class Labyrintti {
             new Ratkoja(priminruudukko, getPrimaAstu(), getPrimaUlos()).etsiUlos().forEach(asetaPrim());
             priminRatkottu = true;
         }
-        return toPrim(true);
+        return toString(true);
     }
     
     // palauttaa sisäänkäynnin
@@ -188,41 +188,6 @@ public class Labyrintti {
         sb.append('\n');
         sb.append('\n');
 
-        for (var rivi : priminruudukko) {
-            for (var pala : rivi) {
-                if (pala.onkoMuuri()) {
-                    sb.append("II");
-                } else if (avaaReitti && pala.onkoUlos()) {
-                    sb.append("  ");
-                } else {
-                    sb.append("▓▓");
-                }
-            }
-            sb.append('\n');
-        }
-        return sb.toString();
-    }
-
-    private String toKruskal(boolean avaaReitti) {
-        var sb = new StringBuilder();
-        for (var rivi : ruudukko) {
-            for (var pala : rivi) {
-                if (pala.onkoMuuri()) {
-                    sb.append("II");
-                } else if (avaaReitti && pala.onkoUlos()) {
-                    sb.append("  ");
-                } else {
-                    sb.append("▓▓");
-                }
-            }
-            sb.append('\n');
-        }
-        return sb.toString();
-    }
-
-    private String toPrim(boolean avaaReitti) {
-        var sb = new StringBuilder();
-        sb.append('\n');
         for (var rivi : priminruudukko) {
             for (var pala : rivi) {
                 if (pala.onkoMuuri()) {
