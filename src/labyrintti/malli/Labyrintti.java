@@ -128,6 +128,10 @@ public class Labyrintti {
         return pala -> ruudukko[pala.getRivi()][pala.getSarake()] = pala;
     }
 
+    private Consumer<Pala> asetaPrim() {
+        return pala -> priminruudukko[pala.getRivi()][pala.getSarake()] = pala;
+    }
+
     public String etsiUlos() {
         if (!onRatkottu) {
             new Ratkoja(ruudukko, getAstu(), getUlos()).etsiUlos().forEach(asetaPala());
@@ -138,7 +142,7 @@ public class Labyrintti {
 
     public String etsiPrim() {
         if (!priminRatkottu) {
-            new Ratkoja(priminruudukko, getPrimaAstu(), getPrimaUlos()).etsiUlos().forEach(asetaPala());
+            new Ratkoja(priminruudukko, getPrimaAstu(), getPrimaUlos()).etsiUlos().forEach(asetaPrim());
             priminRatkottu = true;
         }
         return toString(true);
