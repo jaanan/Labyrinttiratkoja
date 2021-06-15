@@ -4,13 +4,11 @@ import labyrintti.malli.Pala;
 import static labyrintti.malli.Pala.Tyyppi.KULKU;
 import static labyrintti.malli.Pala.Tyyppi.MUURI;
 
-// TÄTÄ EI OLE VIELÄ YHDISTETTY LABYRINTTIIN
-
 public class PriminAlgoritmi {
     private int korkeus;
     private int leveys;
     private char [][] maz;
-    private StringBuilder tulosta;
+//    private StringBuilder tulosta;
     private Pala alku;
     private Pala loppu;
     private Point vika;
@@ -73,6 +71,7 @@ public class PriminAlgoritmi {
         // lisätään kelvolliset solmut rajalle
         frontier.add(new Point(st.r + x, st.c + y, st));
         }
+        var tuplanesto = 0;
 
         while (!frontier.isEmpty()) {
 
@@ -108,7 +107,7 @@ public class PriminAlgoritmi {
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             } 
         }  if (frontier.isEmpty() && vika != null) {
-            maz[vika.r][vika.c] = 'E';
+            maz[vika.r][vika.c] = 'A'; //miksi tämä tulee kaksi kertaa?  Miksi aina r2c1 on E?
         }   
     }   
     for (int i = 0; i < korkeus; i++) {
