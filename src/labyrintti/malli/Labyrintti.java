@@ -181,6 +181,8 @@ public class Labyrintti {
             }
             sb.append('\n');
         }
+        sb.append('\n');
+        sb.append('\n');
 
         for (var rivi : priminruudukko) {
             for (var pala : rivi) {
