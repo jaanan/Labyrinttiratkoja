@@ -45,9 +45,9 @@ public class Labyrintti {
     // luodaan yksinkertainen labyrintti ilman silmukoita tai erillisiä seiniä
   
     private void sovitaRuudukkoon() {
-        sovitaVuorotellen();
-        sovitaRakoihin();
-        teeOvet();
+//        sovitaVuorotellen();
+//        sovitaRakoihin();
+//        teeOvet();
         luoTiet();
     }
 
