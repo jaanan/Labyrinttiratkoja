@@ -106,10 +106,10 @@ public class PriminAlgoritmi {
                     }
                 } 
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
-            }  if (frontier.isEmpty()) {
-                maz[vika.r][vika.c] = 'E';
-            }   
-        }
+            } 
+        }  if (frontier.isEmpty() && vika != null) {
+            maz[vika.r][vika.c] = 'E';
+        }   
     }   
     for (int i = 0; i < korkeus; i++) {
         for (int j = 0; j < leveys; j++)
