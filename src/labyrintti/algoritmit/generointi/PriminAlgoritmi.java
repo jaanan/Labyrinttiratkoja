@@ -50,7 +50,14 @@ public class PriminAlgoritmi {
             }
         }
     return primmaze;
-    }    
+    }
+    public Pala getAstu() {
+        return alku;
+    }
+    
+    public Pala getUlos() {
+        return loppu;
+    }
 
     public void prim() {
         // valitaan alkupiste
@@ -108,8 +115,8 @@ public class PriminAlgoritmi {
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             } 
         }  if (frontier.isEmpty() && vika != null && !this.kerta) {
-            maz[vika.r][vika.c] = 'A'; //miksi tämä tulee kaksi kertaa?  Miksi aina r2c1 on E?
-            this.kerta = true;
+            maz[vika.r][vika.c] = 'E'; //miksi tämä tulee kaksi kertaa?  Miksi aina r2c1 on E?
+            this.kerta = true; // tämä on lisätty, koska koodi teki muuten aina saman myös r2c1:een
         }   
     }   
     for (int i = 0; i < korkeus; i++) {
