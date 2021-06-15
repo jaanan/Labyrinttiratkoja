@@ -95,7 +95,7 @@ public class Konsoli {
     // Näyttää pakoreitin ulos labyrintistä
     private void etsiPakoreitti() {
         System.out.println(labyrintti.etsiUlos());
-        System.out.println(labyrintti.etsiPrim());
+//        System.out.println(labyrintti.etsiPrim());
     }
 
 
