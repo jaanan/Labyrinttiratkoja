@@ -190,7 +190,9 @@ public class Labyrintti {
 
         for (var rivi : priminruudukko) {
             for (var pala : rivi) {
-                if (pala.onkoMuuri()) {
+                if (pala.equals(prima.getAstu())|| pala.equals(prima.getUlos())) {
+                    sb.append("  ");
+                } else if (pala.onkoMuuri()) {
                     sb.append("II");
                 } else if (avaaReitti && pala.onkoUlos()) {
                     sb.append("  ");
