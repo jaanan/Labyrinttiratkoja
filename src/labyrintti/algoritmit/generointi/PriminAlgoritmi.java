@@ -109,6 +109,7 @@ public class PriminAlgoritmi {
             } 
         }  if (frontier.isEmpty() && vika != null && !this.kerta) {
             maz[vika.r][vika.c] = 'A'; //miksi tämä tulee kaksi kertaa?  Miksi aina r2c1 on E?
+            this.kerta = true;
         }   
     }   
     for (int i = 0; i < korkeus; i++) {
