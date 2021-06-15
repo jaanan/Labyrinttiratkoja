@@ -12,12 +12,14 @@ public class PriminAlgoritmi {
     private Pala alku;
     private Pala loppu;
     private Point vika;
+    private boolean kerta;
 
     public PriminAlgoritmi(int korkeus, int leveys) {
         // gemeroitavan sokkelon mitat
         this.korkeus = korkeus;
         this.leveys = leveys;
         this.maz = new char[korkeus][leveys];
+        this.kerta = false;
     }    
     public Pala[] generoi() {
     // rakennetaan sokkelo ja alustetaan se seinillä
@@ -71,7 +73,6 @@ public class PriminAlgoritmi {
         // lisätään kelvolliset solmut rajalle
         frontier.add(new Point(st.r + x, st.c + y, st));
         }
-        var tuplanesto = 0;
 
         while (!frontier.isEmpty()) {
 
@@ -106,7 +107,7 @@ public class PriminAlgoritmi {
                 } 
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             } 
-        }  if (frontier.isEmpty() && vika != null) {
+        }  if (frontier.isEmpty() && vika != null && !this.kerta) {
             maz[vika.r][vika.c] = 'A'; //miksi tämä tulee kaksi kertaa?  Miksi aina r2c1 on E?
         }   
     }   
