@@ -172,14 +172,9 @@ public class Labyrintti {
     }
   
     private String toString(boolean avaaReitti) {
-        var ovi = prima.getAstu();
-        var exit = prima.getUlos();
         var sb = new StringBuilder();
         for (var rivi : ruudukko) {
             for (var pala : rivi) {
-                if (pala.equals(ovi) || pala.equals(exit)) { // tää ei toimi
-                    sb.append("  ");    
-                }
                 if (pala.onkoMuuri()) {
                     sb.append("II");
                 } else if (avaaReitti && pala.onkoUlos()) {
