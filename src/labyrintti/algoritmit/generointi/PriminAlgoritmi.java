@@ -13,6 +13,7 @@ public class PriminAlgoritmi {
     private StringBuilder tulosta;
     private Pala alku;
     private Pala loppu;
+    private Point vika;
 
     public PriminAlgoritmi(int korkeus, int leveys) {
         // gemeroitavan sokkelon mitat
@@ -72,14 +73,14 @@ public class PriminAlgoritmi {
         // lisätään kelvolliset solmut rajalle
         frontier.add(new Point(st.r + x, st.c + y, st));
         }
-        Point vika;
+        
         while (!frontier.isEmpty()) {
 
         // valitaan nykyinen solmu sattumanvaraisesti
         Point cu = frontier.remove((int)(Math.random() * frontier.size()));
         Point op = cu.opposite();
         // jotta voidaa merkitä ulosmeno, tallennetaan viimeisin solmu    
-        vika = op;
+        this.vika = op;
             try {
                 // jos sekä solmu että sen vastakkainen solmu ovat muuria 
                 if (maz[cu.r][cu.c] == '*') { // mites näihin if lauseisiin sai sen tai merkin? | ehkä
@@ -109,8 +110,8 @@ public class PriminAlgoritmi {
         //kun algoritmi on ratkaistu, merkitään ulosmeno    
         } if (frontier.isEmpty()) {
             maz[vika.r][vika.c] = 'E';
-        }
-    }
+        }  
+    }   
     for (int i = 0; i < korkeus; i++) {
         for (int j = 0; j < leveys; j++)
             System.out.print(maz[i][j]);
