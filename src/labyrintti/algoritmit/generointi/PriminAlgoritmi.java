@@ -73,7 +73,7 @@ public class PriminAlgoritmi {
         // lisätään kelvolliset solmut rajalle
         frontier.add(new Point(st.r + x, st.c + y, st));
         }
-        
+
         while (!frontier.isEmpty()) {
 
         // valitaan nykyinen solmu sattumanvaraisesti
@@ -106,11 +106,10 @@ public class PriminAlgoritmi {
                     }
                 } 
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
-            } 
-        //kun algoritmi on ratkaistu, merkitään ulosmeno    
-        } if (frontier.isEmpty()) {
-            maz[vika.r][vika.c] = 'E';
-        }  
+            }  if (frontier.isEmpty()) {
+                maz[vika.r][vika.c] = 'E';
+            }   
+        }
     }   
     for (int i = 0; i < korkeus; i++) {
         for (int j = 0; j < leveys; j++)
