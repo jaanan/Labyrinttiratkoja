@@ -13,6 +13,7 @@ public class PriminAlgoritmi {
     private Pala loppu;
     private Point vika;
     private boolean kerta;
+    private int poistuminen;
 
     public PriminAlgoritmi(int korkeus, int leveys) {
         // gemeroitavan sokkelon mitat
@@ -40,6 +41,7 @@ public class PriminAlgoritmi {
                     primmaze[i] = alku;
                     i++;
                 } else if (maz[x][y] == 'E') {
+                    this.poistuminen = y; //olettaen, että y on sarake
                     loppu = new Pala(x, y, KULKU);
                     primmaze[i] = loppu;
                     i++;
@@ -57,6 +59,10 @@ public class PriminAlgoritmi {
     
     public Pala getUlos() {
         return loppu;
+    }
+
+    public int getPoistu() {
+        return this.poistuminen;
     }
 
     public void prim() {

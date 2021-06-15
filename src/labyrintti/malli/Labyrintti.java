@@ -18,10 +18,12 @@ public class Labyrintti {
     private int leveys;
     private Pala[][] ruudukko;
     private Pala[][] priminruudukko;
+    private PriminAlgoritmi prima;
 
     // varmistetaan, ettei tehdä turhaa työtä
 
     private boolean onRatkottu = false;
+    private boolean priminRatkottu = false;
 
     public Labyrintti(int korkeus, int leveys) {
         if (korkeus < 3 || leveys < 3) {
@@ -114,6 +116,7 @@ public class Labyrintti {
             ruudukko[pala.getRivi()][pala.getSarake()]= pala;
         }
         PriminAlgoritmi pa = new PriminAlgoritmi(korkeus, leveys);
+        this.prima = pa;
         var papalat = pa.generoi();
         for (int i = 0; i < papalat.length; i++) {
             var pala = papalat[i];
@@ -132,18 +135,37 @@ public class Labyrintti {
         }
         return toString(true);
     }
+
+    public String etsiPrim() {
+        if (!priminRatkottu) {
+            new Ratkoja(priminruudukko, getPrimaAstu(), getPrimaUlos()).etsiUlos().forEach(asetaPala());
+            priminRatkottu = true;
+        }
+        return toString(true);
+    }
     
     // palauttaa sisäänkäynnin
   
     private Pala getAstu() {
         return ruudukko[0][1];
     }
+
+    // palauttaa Primin algoritmin sisäänkäynnin 
+    private Pala getPrimaAstu() {
+        return prima.getAstu();
+    }
   
     // palauttaa uloskäynnin
   
     private Pala getUlos() {
         return ruudukko[korkeus - 1][getPoistumisSarake()];
-    } 
+    }
+
+
+    // palauttaa Primin algoritmin uloskäynnin
+    private Pala getPrimaUlos() {
+        return prima.getUlos();
+    }
   
     private String toString(boolean avaaReitti) {
         var sb = new StringBuilder();
@@ -167,9 +189,9 @@ public class Labyrintti {
         return toString(false);
     }
 
-    private Labyrintti(int korkeus, int leveys, Pala[][] ruudukko) {
-        this.korkeus = korkeus;
-        this.leveys = leveys;
-        this.ruudukko = ruudukko;
-    }
+//    private Labyrintti(int korkeus, int leveys, Pala[][] ruudukko) {
+//        this.korkeus = korkeus;
+//        this.leveys = leveys;
+//        this.ruudukko = ruudukko;
+//    }
 }
