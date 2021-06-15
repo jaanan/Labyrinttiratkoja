@@ -118,40 +118,6 @@ public class PriminAlgoritmi {
     }
 
 }
-
-    // tulostetaan lopullinen maze
-    public String toString(){
-        StringBuilder ylin = new StringBuilder(leveys);
-        StringBuilder alin = new StringBuilder(korkeus*leveys);
-        this.tulosta = new StringBuilder(korkeus*leveys);
-        for (int i = 0; i < korkeus; i++) {
-            tulosta.append("*");
-            for (int j = 0; j < leveys; j++) {
-                tulosta.append(maz[i][j]);                    
-            }
-            tulosta.append("*\n");
-        }
-        ylin.append("*");
-        for (int i = 0; i < leveys; i++) {
-            if (i == 1) {
-                ylin.append("S");
-            } else {
-                ylin.append("*");
-            }
-        }
-        ylin.append("*\n");
-        alin.append("*");
-        for (int i = 0; i < leveys; i++) {
-            if (i == leveys-2) {
-                alin.append("E");
-            } else {
-                alin.append("*");
-            }
-        }
-        alin.append("*\n");    
-        return ylin+tulosta.toString()+alin;
-    }      
-
     static class Point {
         Integer r;
         Integer c;
