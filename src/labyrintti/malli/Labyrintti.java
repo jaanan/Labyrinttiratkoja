@@ -180,6 +180,21 @@ public class Labyrintti {
                 }
             }
             sb.append('\n');
+            sb.append('\n');
+            sb.append('\n');
+        }
+
+        for (var rivi : priminruudukko) {
+            for (var pala : rivi) {
+                if (pala.onkoMuuri()) {
+                    sb.append("II");
+                } else if (avaaReitti && pala.onkoUlos()) {
+                    sb.append("  ");
+                } else {
+                    sb.append("▓▓");
+                }
+            }
+            sb.append('\n');
         }
         return sb.toString();
     }
