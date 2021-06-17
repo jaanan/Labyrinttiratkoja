@@ -175,7 +175,9 @@ public class Labyrintti {
         var sb = new StringBuilder();
         for (var rivi : ruudukko) {
             for (var pala : rivi) {
-                if (pala.onkoMuuri()) {
+                if (pala.equals(getAstu())|| pala.equals(getUlos())) {
+                    sb.append("  ");
+                } else if (pala.onkoMuuri()) {
                     sb.append("II");
                 } else if (avaaReitti && pala.onkoUlos()) {
                     sb.append("  ");
