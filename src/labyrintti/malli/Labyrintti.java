@@ -132,12 +132,12 @@ public class Labyrintti {
         return pala -> priminruudukko[pala.getRivi()][pala.getSarake()] = pala;
     }
 
-    public void etsiUlos() {
+    public String etsiUlos() { // tätä ei voinut muuttaa voidiks, herjaa 
         if (!onRatkottu) {
             new Ratkoja(ruudukko, getAstu(), getUlos()).etsiUlos().forEach(asetaPala());
             onRatkottu = true;
         }
-    //    return toString(true);
+        return toString(true);
     }
 
     public String etsiPrim() {
