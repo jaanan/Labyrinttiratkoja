@@ -120,17 +120,16 @@ public class PriminAlgoritmi {
                 } 
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             } 
-        }  
-        //if (frontier.isEmpty() && vika != null && !this.kerta) {
-        //    maz[vika.r][vika.c] = 'E'; //miksi tämä tulee kaksi kertaa?  Miksi aina r2c1 on E?
-        //    this.kerta = true; // tämä on lisätty, koska koodi teki muuten aina saman myös r2c1:een
-        // }   
+        }  if (frontier.isEmpty() && vika != null && !this.kerta) {
+            maz[vika.r][vika.c] = 'E'; //miksi tämä tulee kaksi kertaa?  Miksi aina r2c1 on E?
+            this.kerta = true; // tämä on lisätty, koska koodi teki muuten aina saman myös r2c1:een
+         }   
     }   
-    for (int i = 0; i < korkeus; i++) {
-        for (int j = 0; j < leveys; j++)
-            System.out.print(maz[i][j]);
-            System.out.println();
-    }
+    // for (int i = 0; i < korkeus; i++) {
+    //    for (int j = 0; j < leveys; j++)
+    //        System.out.print(maz[i][j]);
+    //        System.out.println();
+    // }
 
 }
     static class Point {
