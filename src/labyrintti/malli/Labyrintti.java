@@ -1,10 +1,10 @@
 package labyrintti.malli;
 
-import labyrintti.algoritmit.generointi.PriminAlgoritmi;
+import java.util.function.Consumer;
 import labyrintti.algoritmit.generointi.PolkuPuu;
+import labyrintti.algoritmit.generointi.PriminAlgoritmi;
 import labyrintti.algoritmit.ratkaisu.Ratkoja;
 
-import java.util.function.Consumer;
 
 import static java.lang.Integer.parseInt;
 import static labyrintti.malli.Pala.Tyyppi.KULKU;
@@ -132,12 +132,12 @@ public class Labyrintti {
         return pala -> priminruudukko[pala.getRivi()][pala.getSarake()] = pala;
     }
 
-    public String etsiUlos() {
+    public void etsiUlos() {
         if (!onRatkottu) {
             new Ratkoja(ruudukko, getAstu(), getUlos()).etsiUlos().forEach(asetaPala());
             onRatkottu = true;
         }
-        return toString(true);
+    //    return toString(true);
     }
 
     public String etsiPrim() {
