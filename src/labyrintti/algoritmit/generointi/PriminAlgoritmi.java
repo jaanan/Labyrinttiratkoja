@@ -11,7 +11,7 @@ public class PriminAlgoritmi {
 //    private StringBuilder tulosta;
     private Pala alku;
     private Pala loppu;
-    private Point vika;
+    private Piste vika;
     private boolean kerta;
     private int poistuminen;
 
@@ -69,39 +69,39 @@ public class PriminAlgoritmi {
         // valitaan alkupiste
         int alku = 0;
         int piste = 1;
-        Point st = new Point(alku, piste, null);
-        maz[st.r][st.c] = 'S';
+        Piste st = new Piste(alku, piste, null);
+        maz[st.rivi][st.sarake] = 'S';
 
         // iteroidaan solmun suorat naapurit läpi
-        ArrayList <Point> frontier = new ArrayList <Point> ();
+        ArrayList <Piste> frontier = new ArrayList <Piste> ();
         for (int x = -1; x <= 1; x++) {
             for (int y = -1; y <= 1; y++) {
                 if (x == 0 && y == 0 || x != 0 && y != 0)
                     continue;
                     try {
-                        if (maz[st.r + x][st.c + y] == '.') continue;
+                        if (maz[st.rivi + x][st.sarake + y] == '.') continue;
                     } catch (Exception e) { // ignore ArrayIndexOutOfBounds
                         continue;
                     }
         // lisätään kelvolliset solmut rajalle
-        frontier.add(new Point(st.r + x, st.c + y, st));
+        frontier.add(new Piste(st.rivi + x, st.sarake + y, st));
         }
 
         while (!frontier.isEmpty()) {
 
         // valitaan nykyinen solmu sattumanvaraisesti
-        Point cu = frontier.remove((int)(Math.random() * frontier.size()));
-        Point op = cu.opposite();
+        Piste cu = frontier.remove((int)(Math.random() * frontier.size()));
+        Piste op = cu.opposite(maz.length-1, maz[0].length-1);
         // jotta voidaa merkitä ulosmeno, tallennetaan viimeisin solmu    
         this.vika = op;
             try {
                 // jos sekä solmu että sen vastakkainen solmu ovat muuria 
-                if (maz[cu.r][cu.c] == '*') { // mites näihin if lauseisiin sai sen tai merkin? | ehkä
-                    if (maz[op.r][op.c] == '*') {
+                if (maz[cu.rivi][cu.sarake] == '*') { // mites näihin if lauseisiin sai sen tai merkin? | ehkä
+                    if (maz[op.rivi][op.sarake] == '*') {
 
                         // avataan solmujen välille polku
-                        maz[cu.r][cu.c] = '.';
-                        maz[op.r][op.c] = '.';
+                        maz[cu.rivi][cu.sarake] = '.';
+                        maz[op.rivi][op.sarake] = '.';
 
                         // iteroidaan solmun suorat naapurit, sama kuin aiemmin
                         for (int z = -1; z <= 1; z++) {
@@ -109,11 +109,15 @@ public class PriminAlgoritmi {
                                 if (z == 0 && q == 0 || z != 0 && q != 0) {
                                     continue;
                                 } try {
-                                    if (maz[op.r + z][op.c + q] == '.') continue;
+                                    if (maz[op.rivi + z][op.sarake + q] == '.') continue;
                                 } catch (Exception e) {
                                         continue;
-                                }    
-                                frontier.add(new Point(op.r + z, op.c + q, op));
+                                }
+                                int pointX = op.rivi + z;
+                                int pointY = op.sarake + q;
+                                if (pointX >= 0 && pointY >= 0 && pointX < maz.length && pointY < maz[0].length){
+                                    frontier.add(new Piste(pointX, pointY, op));
+                                }
                             }
                         }    
                     }
@@ -121,7 +125,7 @@ public class PriminAlgoritmi {
             } catch (Exception e) { // ignore NullPointer and ArrayIndexOutOfBounds
             } 
         }  if (frontier.isEmpty() && vika != null && !this.kerta) {
-            maz[vika.r][vika.c] = 'E'; //miksi tämä tulee kaksi kertaa?  Miksi aina r2c1 on E?
+            maz[vika.rivi][vika.sarake] = 'E'; //miksi tämä tulee kaksi kertaa?  Miksi aina r2c1 on E?
             this.kerta = true; // tämä on lisätty, koska koodi teki muuten aina saman myös r2c1:een
          }   
     }   
@@ -132,21 +136,25 @@ public class PriminAlgoritmi {
     // }
 
 }
-    static class Point {
-        Integer r;
-        Integer c;
-        Point parent;
-        public Point(int x, int y, Point p) {
-            r = x;
-            c = y;
+    static class Piste {
+        Integer rivi;
+        Integer sarake;
+        Piste parent;
+
+        public Piste(int x, int y, Piste p) {
+            rivi = x;
+            sarake = y;
             parent = p;
             }
     // lasketaan, onko annettu vastakkainen solmu eri suuntaan parent-solmusta katsottuna.
-        public Point opposite() {
-            if (this.r.compareTo(parent.r) != 0)
-                return new Point(this.r + this.r.compareTo(parent.r), this.c, this);
-            if (this.c.compareTo(parent.c) != 0)
-                return new Point(this.r, this.c + this.c.compareTo(parent.c), this);
+        public Piste opposite(int maxX,int maxY) {
+            if (this.rivi.compareTo(parent.rivi) != 0){
+                return new Piste(Math.min(Math.max(0, this.rivi + this.rivi.compareTo(parent.rivi)), maxX), this.sarake, this);
+            }
+            if (this.sarake.compareTo(parent.sarake) != 0){
+                return new Piste(this.rivi, Math.min(Math.max(0, this.sarake + this.sarake.compareTo(parent.sarake)), maxY), this);
+            }
+
             return null;
         }
     }   

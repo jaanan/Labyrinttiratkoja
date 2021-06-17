@@ -1,0 +1,30 @@
+plugins {
+    id "application"
+}
+apply plugin : "java"
+sourceSets {
+    main.java.srcDirs = ['src']
+    test.java.srcDirs = ['test']
+}
+ext {
+    javaMainClass = "labyrintti.Main"
+}
+run{
+    standardInput = System.in
+}
+
+repositories { mavenCentral() }
+
+application {
+    mainClassName = javaMainClass
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+}
