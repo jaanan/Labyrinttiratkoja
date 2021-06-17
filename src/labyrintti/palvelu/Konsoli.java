@@ -1,12 +1,9 @@
 package labyrintti.palvelu;
 
-import labyrintti.malli.Labyrintti;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import labyrintti.malli.Labyrintti;
+
 
 import static java.lang.Integer.parseInt;
 
@@ -94,7 +91,8 @@ public class Konsoli {
 
     // Näyttää pakoreitin ulos labyrintistä
     private void etsiPakoreitti() {
-        System.out.println(labyrintti.etsiUlos());
+        labyrintti.etsiUlos();
+    //     System.out.println(labyrintti.etsiUlos());
         System.out.println(labyrintti.etsiPrim());
     }
 
