@@ -8,10 +8,10 @@ import labyrintti.malli.Labyrintti;
 import static java.lang.Integer.parseInt;
 
 // Tämä luokka mahdollistaa käyttäjän ja sovelluksen vuorovaikutuksen.
-// Se lukee käyttäjän syötteitä ja printtaa niiden mukaan näkymään konsoliin ja tallentaa labyrintin sisäiseisti. 
+// Se lukee käyttäjän syötteitä ja printtaa niiden mukaan näkymään konsoliin ja tallentaa labyrintin sisäiseisti.
 
 public class Konsoli {
-  
+
     private Scanner scanner;
     private Labyrintti labyrintti;
     private boolean onkolabyrinttiSaatavilla = false;
@@ -33,7 +33,7 @@ public class Konsoli {
                         luo();
                         break;
                     case 2:
-                        etsiPakoreitti(); 
+                        etsiPakoreitti();
                         break;
                     default:
                         System.out.println("Virheellinen valinta. Ole mieliksi ja koita uudelleen.");
@@ -82,8 +82,8 @@ public class Konsoli {
         onkolabyrinttiSaatavilla = true;
         tulosta();
     }
-  
-      // Tulostaa labyrintin
+
+    // Tulostaa labyrintin
     private void tulosta() {
         System.out.println(labyrintti);
 //        this.labyrintti.toPrim();
@@ -91,9 +91,9 @@ public class Konsoli {
 
     // Näyttää pakoreitin ulos labyrintistä
     private void etsiPakoreitti() {
-        labyrintti.etsiUlos();
-    //     System.out.println(labyrintti.etsiUlos());
-        System.out.println(labyrintti.etsiPrim());
+        labyrintti.etsiPrim();
+        //     System.out.println(labyrintti.etsiUlos());
+        System.out.println(labyrintti.etsiUlos());
     }
 
 

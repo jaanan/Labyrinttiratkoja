@@ -128,34 +128,34 @@ public class Labyrintti {
         return pala -> ruudukko[pala.getRivi()][pala.getSarake()] = pala;
     }
 
-    private Consumer<Pala> asetaPrim() {
+    public Consumer<Pala> asetaPrim() {
         return pala -> priminruudukko[pala.getRivi()][pala.getSarake()] = pala;
     }
 
-    public void etsiUlos() { // tätä ei voinut muuttaa voidiks, herjaa 
+    public String etsiUlos() { // tätä ei voinut muuttaa voidiks, herjaa
         if (!onRatkottu) {
             new Ratkoja(ruudukko, getAstu(), getUlos()).etsiUlos().forEach(asetaPala());
             onRatkottu = true;
         }
-        // return toString(true);
+        return toString(true);
     }
 
-    public String etsiPrim() {
+    public void etsiPrim() {
         if (!priminRatkottu) {
             new Ratkoja(priminruudukko, getPrimaAstu(), getPrimaUlos()).etsiUlos().forEach(asetaPrim());
             priminRatkottu = true;
         }
-        return toString(true);
+        // return toString(true);
     }
     
     // palauttaa sisäänkäynnin
   
-    private Pala getAstu() {
+    public Pala getAstu() {
         return ruudukko[0][1];
     }
 
     // palauttaa Primin algoritmin sisäänkäynnin 
-    private Pala getPrimaAstu() {
+    public Pala getPrimaAstu() {
         return prima.getAstu();
     }
   
@@ -167,8 +167,16 @@ public class Labyrintti {
 
 
     // palauttaa Primin algoritmin uloskäynnin
-    private Pala getPrimaUlos() {
+    public Pala getPrimaUlos() {
         return prima.getUlos();
+    }
+
+    public PriminAlgoritmi getPrim() {
+        return this.prima;
+    }
+
+    public Pala [][] getPriminruudukko() {
+        return this.priminruudukko;
     }
   
     private String toString(boolean avaaReitti) {
