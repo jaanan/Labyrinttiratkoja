@@ -117,6 +117,7 @@ public class Labyrintti {
             var pala = pppalat[i];
             ruudukko[pala.getRivi()][pala.getSarake()]= pala;
         }
+
         PriminAlgoritmi pa = new PriminAlgoritmi(korkeus, leveys);
         this.prima = pa;
         var papalat = pa.generoi();

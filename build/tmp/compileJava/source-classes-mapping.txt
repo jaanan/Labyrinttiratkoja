@@ -11,12 +11,12 @@ labyrintti/malli/Pala.java
  labyrintti.malli.Pala$Tyyppi
 labyrintti/algoritmit/generointi/PolkuPuu.java
  labyrintti.algoritmit.generointi.PolkuPuu
-labyrintti/malli/Labyrintti.java
- labyrintti.malli.Labyrintti
+labyrintti/Main.java
+ labyrintti.Main
 labyrintti/algoritmit/generointi/PriminAlgoritmi.java
  labyrintti.algoritmit.generointi.PriminAlgoritmi
  labyrintti.algoritmit.generointi.PriminAlgoritmi$Piste
-labyrintti/Main.java
- labyrintti.Main
+labyrintti/malli/Labyrintti.java
+ labyrintti.malli.Labyrintti
 labyrintti/palvelu/Konsoli.java
  labyrintti.palvelu.Konsoli
