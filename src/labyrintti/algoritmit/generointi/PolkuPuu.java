@@ -15,6 +15,7 @@ public class PolkuPuu {
 
     private int korkeus;
     private int leveys;
+    private long timeElapsed;
 
     public PolkuPuu(int korkeus, int leveys) {
         this.korkeus = (korkeus-1)/2;
@@ -83,6 +84,7 @@ public class PolkuPuu {
     // connects on tässä tiedostossa myöhemmin esitettävä funktio ja erotteleOsat yllä annettu muuttuja.
 
     private Raja[] luoViritettyPuu(Raja[] rajat) {
+        long start = System.nanoTime();
         ErotetutOsat erotteleOsat = new ErotetutOsat(leveys * korkeus);
     //    return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList());
     // mites tän truerajat taulukon koko, onko tällä väliä, jos jää liian suureksi? Miten tän sais just oikeen kokoiseksi?
@@ -108,6 +110,8 @@ public class PolkuPuu {
                 index++;
             }
 		}
+        long finish = System.nanoTime();
+        this.timeElapsed = finish - start;
         return puunrajat;
     }
 
@@ -153,5 +157,9 @@ public class PolkuPuu {
         var rivi = eka.getRivi() + toka.getRivi()+1;
         var sarake = eka.getSarake() + toka.getSarake()+1;
         return new Pala(rivi, sarake, KULKU);
+    }
+
+    public long getAika() {
+        return this.timeElapsed;
     }
 }

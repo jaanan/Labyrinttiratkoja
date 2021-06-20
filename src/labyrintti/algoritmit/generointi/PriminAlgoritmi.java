@@ -14,6 +14,7 @@ public class PriminAlgoritmi {
     private Piste vika;
     private boolean kerta;
     private int poistuminen;
+    private long timeElapsed;
 
     public PriminAlgoritmi(int korkeus, int leveys) {
         // gemeroitavan sokkelon mitat
@@ -65,7 +66,12 @@ public class PriminAlgoritmi {
         return this.poistuminen;
     }
 
+    public long getAika() {
+        return this.timeElapsed;
+    }
+
     public void prim() {
+        long start = System.nanoTime();
         // valitaan alkupiste
         int alku = 0;
         int piste = 1;
@@ -128,7 +134,8 @@ public class PriminAlgoritmi {
                 this.kerta = true; // tämä on lisätty, koska koodi teki muuten aina saman myös r2c1:een
             }
         }
-
+        long finish = System.nanoTime();
+        this.timeElapsed = finish - start;
     }
     static class Piste {
         Integer rivi;

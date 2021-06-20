@@ -86,13 +86,14 @@ public class Konsoli {
     // Tulostaa labyrintin
     private void tulosta() {
         System.out.println(labyrintti);
+        System.out.println("Nopeammin labyrintin generoi: " + labyrintti.getAikeEro());
+        System.out.println();
 //        this.labyrintti.toPrim();
     }
 
     // Näyttää pakoreitin ulos labyrintistä
     private void etsiPakoreitti() {
         labyrintti.etsiPrim();
-        //     System.out.println(labyrintti.etsiUlos());
         System.out.println(labyrintti.etsiUlos());
     }
 

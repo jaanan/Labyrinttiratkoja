@@ -2,21 +2,21 @@ labyrintti/algoritmit/ratkaisu/Solmu.java
  labyrintti.algoritmit.ratkaisu.Solmu
 labyrintti/algoritmit/ratkaisu/Ratkoja.java
  labyrintti.algoritmit.ratkaisu.Ratkoja
-labyrintti/Main.java
- labyrintti.Main
+labyrintti/algoritmit/generointi/Raja.java
+ labyrintti.algoritmit.generointi.Raja
 labyrintti/algoritmit/generointi/ErotetutOsat.java
  labyrintti.algoritmit.generointi.ErotetutOsat
 labyrintti/malli/Pala.java
  labyrintti.malli.Pala
  labyrintti.malli.Pala$Tyyppi
+labyrintti/algoritmit/generointi/PolkuPuu.java
+ labyrintti.algoritmit.generointi.PolkuPuu
 labyrintti/malli/Labyrintti.java
  labyrintti.malli.Labyrintti
-labyrintti/algoritmit/generointi/Raja.java
- labyrintti.algoritmit.generointi.Raja
 labyrintti/algoritmit/generointi/PriminAlgoritmi.java
  labyrintti.algoritmit.generointi.PriminAlgoritmi
  labyrintti.algoritmit.generointi.PriminAlgoritmi$Piste
+labyrintti/Main.java
+ labyrintti.Main
 labyrintti/palvelu/Konsoli.java
  labyrintti.palvelu.Konsoli
-labyrintti/algoritmit/generointi/PolkuPuu.java
- labyrintti.algoritmit.generointi.PolkuPuu

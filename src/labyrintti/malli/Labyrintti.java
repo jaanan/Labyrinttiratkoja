@@ -19,6 +19,7 @@ public class Labyrintti {
     private Pala[][] ruudukko;
     private Pala[][] priminruudukko;
     private PriminAlgoritmi prima;
+    private PolkuPuu puu;
 
     // varmistetaan, ettei tehdä turhaa työtä
 
@@ -110,6 +111,7 @@ public class Labyrintti {
   
     private void luoTiet() {
         PolkuPuu pp = new PolkuPuu(korkeus, leveys);
+        this.puu = pp;
         var pppalat = pp.generoi();
         for (int i = 0; i < pppalat.length; i++) {
             var pala = pppalat[i];
@@ -177,6 +179,17 @@ public class Labyrintti {
 
     public Pala [][] getPriminruudukko() {
         return this.priminruudukko;
+    }
+
+    public String getAikeEro() {
+        long priminaika = prima.getAika();
+        long kruskalinaika = puu.getAika();
+        if (priminaika < kruskalinaika){
+            return "Prim";
+        } else if (kruskalinaika < priminaika) {
+            return "Kruskal";
+        }
+        return "Yhtä nopeita";
     }
   
     private String toString(boolean avaaReitti) {
