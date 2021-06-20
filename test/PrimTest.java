@@ -61,6 +61,67 @@ class PrimTest {
     assertEquals(true, molemmat);
   }
 
+  @Test
+  void AlkuJaLoppupisteenValillaReitti() {
+    Pala [][] priminruudukko = new Pala[10][10];
+    PriminAlgoritmi algoritmi = new PriminAlgoritmi(10, 10);
+    var papalat = algoritmi.generoi();
+    for (int i = 0; i < papalat.length; i++) {
+      var pala = papalat[i];
+      priminruudukko[pala.getRivi()][pala.getSarake()]= pala;
+    }
+    var lista = new Ratkoja(priminruudukko, algoritmi.getAstu(), algoritmi.getUlos()).etsiUlos();
+    int alku = 0;
+    int loppu = 0;
+    var ekasarake = algoritmi.getAstu().getSarake();
+    var ekarivi = algoritmi.getAstu().getRivi();
+    var vikasarake = algoritmi.getUlos().getSarake();
+    var vikarivi = algoritmi.getUlos().getRivi();
+    for (Pala pala : lista) {
+      var palansarake = pala.getSarake();
+      var palanrivi = pala.getRivi();
+      if (palansarake == ekasarake && palanrivi == ekarivi) {
+        alku++;
+      } else if (palansarake == vikasarake && palanrivi == vikarivi) {
+        loppu++;
+      }
+    }
+    int summa = alku+loppu;
+    assertEquals(2, summa);
+  }
+
+  @Test
+  void reittiOnKulkuKaytavilla() {
+    Pala [][] priminruudukko = new Pala[10][10];
+    PriminAlgoritmi algoritmi = new PriminAlgoritmi(10, 10);
+    var algoritminpalat = algoritmi.generoi();
+    for (int i = 0; i < algoritminpalat.length; i++) {
+      var pala = algoritminpalat[i];
+      priminruudukko[pala.getRivi()][pala.getSarake()]= pala;
+    }
+    var reitti = new Ratkoja(priminruudukko, algoritmi.getAstu(), algoritmi.getUlos()).etsiUlos();
+    List<Pala> kulkulista = new ArrayList<Pala>();
+    for (Pala pala : algoritminpalat) {
+      if (pala.onkoKulku()) {
+        kulkulista.add(pala);
+      }
+    }
+    int tarkistus = 0;
+    for (Pala pala : reitti) {
+      int sarake = pala.getSarake();
+      int rivi = pala.getRivi();
+      for (Pala kulkupala : kulkulista) {
+        int kulkusarake = kulkupala.getSarake();
+        int kulkurivi = kulkupala.getRivi();
+        if(sarake == kulkusarake && rivi == kulkurivi) {
+          tarkistus++;
+          continue;
+        }
+      }
+    }
+    assertEquals(reitti.size(), tarkistus);
+  }
+
 
 
   //@Test

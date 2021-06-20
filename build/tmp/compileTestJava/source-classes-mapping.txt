@@ -1,2 +1,4 @@
 PrimTest.java
  PrimTest
+KruskalTest.java
+ KruskalTest

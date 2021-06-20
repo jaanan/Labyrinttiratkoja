@@ -178,8 +178,16 @@ public class Labyrintti {
         return this.prima;
     }
 
+    public PolkuPuu getPuu() {
+        return this.puu;
+    }
+
     public Pala [][] getPriminruudukko() {
         return this.priminruudukko;
+    }
+
+    public Pala [][] getRuudukko() {
+        return this.ruudukko;
     }
 
     public String getAikeEro() {
