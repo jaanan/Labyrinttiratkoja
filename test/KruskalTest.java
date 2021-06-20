@@ -53,6 +53,36 @@ public class KruskalTest {
         assertEquals(true, molemmat);
     }
 
+    @Test
+    void alunJaLopunValillaOnReitti() {
+        Labyrintti maze = new Labyrintti(30, 30);
+        var puu = maze.getPuu();
+        Pala [][] ruudukko = maze.getRuudukko();
+        var palaset = puu.generoi();
+        for (int i = 0; i < palaset.length; i++) {
+            var pala = palaset[i];
+            ruudukko[pala.getRivi()][pala.getSarake()]= pala;
+        }
+        var lista = new Ratkoja(ruudukko, maze.getAstu(), maze.getUlos()).etsiUlos();
+        int alku = 0;
+        int loppu = 0;
+        var ekasarake = maze.getAstu().getSarake();
+        var ekarivi = maze.getAstu().getRivi();
+        var vikasarake = maze.getUlos().getSarake();
+        var vikarivi = maze.getUlos().getRivi();
+        for (Pala pala : lista) {
+            var palansarake = pala.getSarake();
+            var palanrivi = pala.getRivi();
+            if (palansarake == ekasarake && palanrivi == ekarivi) {
+                alku++;
+            } else if (palansarake == vikasarake && palanrivi == vikarivi) {
+                loppu++;
+            }
+        }
+        int summa = alku+loppu;
+        assertEquals(2, summa);
+    }
+
     //@Test
   /*
   void labyrintinPalatOvatLabyrintinMittojenSisällä

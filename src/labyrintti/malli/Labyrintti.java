@@ -164,7 +164,7 @@ public class Labyrintti {
   
     // palauttaa uloskäynnin
   
-    private Pala getUlos() {
+    public Pala getUlos() {
         return ruudukko[korkeus - 1][getPoistumisSarake()];
     }
 
