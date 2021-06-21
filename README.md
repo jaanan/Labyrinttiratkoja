@@ -33,10 +33,10 @@ cd labyrinttiratkoja
 
 ### 2. Kokoa
 
-javac -sourcepath ./src -d bin src/labyrintti/Main.java
+ ./gradlew build
 
 ### 3. Aja
 
-java -classpath ./bin labyrintti.Main
+./gradlew run
 
 Jos labyrintti näyttää hassulta, niin vedä terminaali-ikkunaa isommaksi.
