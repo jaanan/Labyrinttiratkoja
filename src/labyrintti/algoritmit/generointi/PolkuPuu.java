@@ -2,6 +2,7 @@ package labyrintti.algoritmit.generointi;
 
 import labyrintti.malli.Pala;
 
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,6 +15,7 @@ public class PolkuPuu {
 
     private int korkeus;
     private int leveys;
+    private long timeElapsed;
 
     public PolkuPuu(int korkeus, int leveys) {
         this.korkeus = (korkeus-1)/2;
@@ -22,11 +24,12 @@ public class PolkuPuu {
 
 // Luodaan random lista palasia, joista muodostuu labyrintti
 // Saako tässä olla List? Entä Collections.shuffle?
-// Tuo Collections Shuffle sufflaa reunoja, jotka on tallennettu ArrayListiin, joten ehkä ensin pitää onnistua jotenkin tallentamaan Rajat taulukkoon arraylistin sijaan... 
+// Tuo Collections Shuffle sufflaa reunoja, jotka on tallennettu ArrayListiin, joten ehkä ensin pitää onnistua jotenkin tallentamaan Rajat taulukkoon arraylistin sijaan...
+// Korvattu Collections.shuffle(reunat); metodilla sekoitaTaulukko  
     
-    public List<Pala> generoi() {
-        var reunat = luoReunat();
-        Collections.shuffle(reunat);
+    public Pala[] generoi() {
+        var reunat = luoReunat();     
+        sekoitaTaulukko(reunat);
         var puu = luoViritettyPuu(reunat);
         return luoPolut(puu);
     }
@@ -36,20 +39,23 @@ public class PolkuPuu {
 // Luodaan rajat labyrintille
 // Ongelmallinen ArrayList käytössä
 
-    private List<Raja> luoReunat() {
-        var rajat = new ArrayList<Raja>();
+    private Raja[] luoReunat() {
+        var rajat = new Raja[leveys+korkeus+korkeus*leveys*2];
         for (int sarake = 1; sarake < leveys; sarake++) {
-            rajat.add(new Raja(indeksiin(0, sarake), indeksiin(0, sarake-1)));
+            rajat[sarake-1]=(new Raja(indeksiin(0, sarake), indeksiin(0, sarake-1)));
         }
         
         for (int rivi = 1; rivi < korkeus; rivi++) {
-            rajat.add(new Raja(indeksiin(rivi, 0), indeksiin(rivi - 1, 0)));
+            rajat[leveys+rivi-1]=(new Raja(indeksiin(rivi, 0), indeksiin(rivi - 1, 0)));
         }
         
+        int apu = 0;
         for (int rivi = 1; rivi < korkeus; rivi++) {
             for (int sarake = 1; sarake < leveys; sarake++) {
-                rajat.add(new Raja(indeksiin(rivi, sarake), indeksiin(rivi, sarake-1)));
-                rajat.add(new Raja(indeksiin(rivi, sarake), indeksiin(rivi-1, sarake)));
+                rajat[leveys+korkeus+apu]=(new Raja(indeksiin(rivi, sarake), indeksiin(rivi, sarake-1)));
+                apu++;
+                rajat[leveys+korkeus+apu]=(new Raja(indeksiin(rivi, sarake), indeksiin(rivi-1, sarake)));
+                apu++;
             }
         }
         return rajat;
@@ -60,29 +66,81 @@ public class PolkuPuu {
     private int indeksiin(int rivi, int sarake) {
         return rivi * leveys + sarake;
     }
+    
+    // luodaan metodi, joka tekee saman, kuin Collections.shuffle, mutta taulukolle
+    private Raja[] sekoitaTaulukko(Raja[] rajat) {
+		Random rand = new Random();
+		for (int i = 0; i < rajat.length; i++) {
+			int randomIndexToSwap = rand.nextInt(rajat.length);
+			Raja temp = rajat[randomIndexToSwap];
+			rajat[randomIndexToSwap] = rajat[i];
+			rajat[i] = temp;
+		}
+        return rajat;
+    }
 
     // Luodaan lista reunoista, jotka yhdistävät polkuja Kruskalin algoritmiä hyödyntäen.
-    // Mitä tässä tuo stream ja filter ja collect toList tekevät? raja on ilmeisesti järjestyksessä otettava olio listasta rajat? connects on tässä tiedostossa myöhemmin esitettävä funktio ja erotteleOsat yllä annettu muuttuja.
+    // Mitä tässä tuo stream ja filter ja collect toList tekevät? raja on ilmeisesti järjestyksessä otettava olio listasta rajat? 
+    // connects on tässä tiedostossa myöhemmin esitettävä funktio ja erotteleOsat yllä annettu muuttuja.
 
-    private List<Raja> luoViritettyPuu(List<Raja> rajat) {
-        var erotteleOsat = new ErotetutOsat(leveys * korkeus);
-        return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList());
+    private Raja[] luoViritettyPuu(Raja[] rajat) {
+        long start = System.nanoTime();
+        ErotetutOsat erotteleOsat = new ErotetutOsat(leveys * korkeus);
+    //    return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList());
+    // mites tän truerajat taulukon koko, onko tällä väliä, jos jää liian suureksi? Miten tän sais just oikeen kokoiseksi?
+        Raja[] truerajat = new Raja[rajat.length];
+        int apu = 0;
+        for (int i = 0; i < rajat.length; i++) {
+            var raja = rajat[i];
+            if (raja != null) {
+                if (connects(raja, erotteleOsat)){
+                    // miten vois välttää, että tänne ei jää tyhjiä väliin? apumuuttujalla?
+                    truerajat[i]=rajat[i];
+                    apu++;
+                } else {
+                    i++;
+                }
+            }    
+		}
+        Raja[] puunrajat = new Raja[apu];
+        int index = 0;
+        for (int i = 0; i < truerajat.length; i++) {
+            if (truerajat[i]!=null){
+                puunrajat[index]=truerajat[i];
+                index++;
+            }
+		}
+        long finish = System.nanoTime();
+        this.timeElapsed = finish - start;
+        return puunrajat;
     }
 
     // Testataan, yhdistääkö raja polkuja
 
     private boolean connects(Raja raja, ErotetutOsat erotetutOsat) {
-        return erotetutOsat.yhdistys(raja.getEkaPala(), raja.getTokaPala());
+        var eka = raja.getEkaPala();
+        var toka = raja.getTokaPala();
+        return erotetutOsat.yhdistys(eka, toka);
     }
 
     // Lista paloista, jotka yhdistävät polkuja
     
-    private List<Pala> luoPolut(List<Raja> viritettyPuu) {
-        return viritettyPuu.stream().map(raja -> {
-                var eka = indeksista(raja.getEkaPala());
-                var toka = indeksista(raja.getTokaPala());
-                return getPolku(eka, toka);
-            }).collect(toList());
+//    private Pala[] luoPolut(Raja[] viritettyPuu) {
+//        return viritettyPuu.stream().map(raja -> {
+//                var eka = indeksista(raja.getEkaPala());
+//                var toka = indeksista(raja.getTokaPala());
+//                return getPolku(eka, toka);
+//            }).collect(toList());
+//    }
+
+    private Pala[] luoPolut(Raja[] viritettyPuu) {
+        var kulkupalat = new Pala[viritettyPuu.length];
+        for (int i = 0; i < viritettyPuu.length; i++) {
+            Pala eka = indeksista(viritettyPuu[i].getEkaPala());
+            Pala toka = indeksista(viritettyPuu[i].getTokaPala());
+            kulkupalat[i] = getPolku(eka, toka);
+        }
+        return kulkupalat;
     }
 
     // Muutetaan koordinaatit takaisin 2-ulotteiseen maailmaan sopiviksi
@@ -99,5 +157,9 @@ public class PolkuPuu {
         var rivi = eka.getRivi() + toka.getRivi()+1;
         var sarake = eka.getSarake() + toka.getSarake()+1;
         return new Pala(rivi, sarake, KULKU);
+    }
+
+    public long getAika() {
+        return this.timeElapsed;
     }
 }

@@ -1,20 +1,17 @@
 package labyrintti.palvelu;
 
-import labyrintti.malli.Labyrintti;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import labyrintti.malli.Labyrintti;
+
 
 import static java.lang.Integer.parseInt;
 
 // Tämä luokka mahdollistaa käyttäjän ja sovelluksen vuorovaikutuksen.
-// Se lukee käyttäjän syötteitä ja printtaa niiden mukaan näkymään konsoliin ja tallentaa labyrintin sisäiseisti. 
+// Se lukee käyttäjän syötteitä ja printtaa niiden mukaan näkymään konsoliin ja tallentaa labyrintin sisäiseisti.
 
 public class Konsoli {
-  
+
     private Scanner scanner;
     private Labyrintti labyrintti;
     private boolean onkolabyrinttiSaatavilla = false;
@@ -36,7 +33,7 @@ public class Konsoli {
                         luo();
                         break;
                     case 2:
-                        etsiPakoreitti(); 
+                        etsiPakoreitti();
                         break;
                     default:
                         System.out.println("Virheellinen valinta. Ole mieliksi ja koita uudelleen.");
@@ -45,6 +42,8 @@ public class Konsoli {
             } catch (InputMismatchException e) {
                 System.out.println("Virheellinen valinta. Ole mieliksi ja koita uudelleen.");
             } catch (Exception e) {
+                // lisätään e.printStackTrace();
+                e.printStackTrace();
                 System.out.println("Tuntematon erhe");
             }
         }
@@ -83,14 +82,18 @@ public class Konsoli {
         onkolabyrinttiSaatavilla = true;
         tulosta();
     }
-  
-      // Tulostaa labyrintin
+
+    // Tulostaa labyrintin
     private void tulosta() {
         System.out.println(labyrintti);
+        System.out.println("Nopeammin labyrintin generoi: " + labyrintti.getAikeEro());
+        System.out.println();
+//        this.labyrintti.toPrim();
     }
 
     // Näyttää pakoreitin ulos labyrintistä
     private void etsiPakoreitti() {
+        labyrintti.etsiPrim();
         System.out.println(labyrintti.etsiUlos());
     }
 
