@@ -9,19 +9,17 @@ public class ErotetutOsat {
     private int[] sija;
     private int koko;
 
-    // mahdollisesti ongelmallinen range(0, koko).forEach(this::teeOsa); Onko mahdollista korvata jollain muulla loopilla? Tässä tiedostossa ei muita algoritmillisiä ongelmia kurssin läpimenon kannalta
+    // Kruskalin algoritmissä yhdistetään ne osat puusta, jotka eivät vielä olleet yhdistettyinä toisiinsa.
 
     public ErotetutOsat(int koko) {
-    //    this.koko = koko;
         vanhempi = new int[koko];
         sija = new int[koko];
-    //    range(0, koko).forEach(this::teeOsa);
         for(int i = 0; i < koko; i++) {
             teeOsa(i);
         }
     }
 
-    //alustus
+    // alustuksessa vanhemman sija saa aina arvon 0, se on puun juuri
 
     private void teeOsa(int i) {
         vanhempi[i] = i;
@@ -38,7 +36,7 @@ public class ErotetutOsat {
         return vanhempi[i];
     }
 
-    // yhdistää erilliset osat, jos ne eivät vielä kuulu samaan osaan
+    // Kruskalin algoritmissä etsitään puita, joita ei ole vielä yhdistetty toisiinsa. Tällaisen löytyessä puut yhdistetään.
     
     public boolean yhdistys(int i, int j) {
         var iJuuri = etsi(i);

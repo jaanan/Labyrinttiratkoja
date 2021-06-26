@@ -191,12 +191,15 @@ public class Labyrintti {
     }
 
     public String getAikeEro() {
+
         long priminaika = prima.getAika();
         long kruskalinaika = puu.getAika();
+        String primaika = Long.toString(priminaika);
+        String kruskalaika = Long.toString(kruskalinaika);
         if (priminaika < kruskalinaika){
-            return "Prim";
+            return "Prim: " + primaika + " ns < " + "Kruskal: " + kruskalaika +" ns.";
         } else if (kruskalinaika < priminaika) {
-            return "Kruskal";
+            return "Kruskal: " + kruskalaika + " ns < " + "Prim: " + primaika + " ns.";
         }
         return "Yhtä nopeita";
     }

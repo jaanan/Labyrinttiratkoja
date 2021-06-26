@@ -1,6 +1,8 @@
 package labyrintti.algoritmit.generointi;
 
-// Luokka rajoille, joiden sisällä PolkuPuu kulkee polkuja luodessaan.
+// Luokka kaarille, joiden sisällä Kruskalin algoritmin PolkuPuu kulkee polkuja luodessaan.
+// Kaari. eli tässä Raja, yhdistää kaksi palaa.
+
 class Raja {
 
     private final int ekaPala;

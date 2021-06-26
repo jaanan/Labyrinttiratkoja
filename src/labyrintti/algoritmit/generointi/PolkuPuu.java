@@ -22,10 +22,7 @@ public class PolkuPuu {
         this.leveys = (leveys-1)/2;
     }
 
-// Luodaan random lista palasia, joista muodostuu labyrintti
-// Saako tässä olla List? Entä Collections.shuffle?
-// Tuo Collections Shuffle sufflaa reunoja, jotka on tallennettu ArrayListiin, joten ehkä ensin pitää onnistua jotenkin tallentamaan Rajat taulukkoon arraylistin sijaan...
-// Korvattu Collections.shuffle(reunat); metodilla sekoitaTaulukko  
+// Luodaan labyrintin kaaret eli reunat, rajat, joiden avulla labyrintti voidaan luoda. Sekoitetaan ne satunnaiseen järjestykseen ja luodaan polut, joissa labyrintissa voi kulkea.
     
     public Pala[] generoi() {
         var reunat = luoReunat();     
@@ -33,11 +30,8 @@ public class PolkuPuu {
         var puu = luoViritettyPuu(reunat);
         return luoPolut(puu);
     }
-//2021 mietitään, miten tuon ylläolevan voisi toteuttaa taulukkona
-// Miten tuon Pala-listan voi toteuttaa hyödyntäen vain taulukoita? Voiko taulukoihin tallentaa Paloja?
 
-// Luodaan rajat labyrintille
-// Ongelmallinen ArrayList käytössä
+// Luodaan taulukkos, jossa on kaikki labyrintin kaaret.
 
     private Raja[] luoReunat() {
         var rajat = new Raja[leveys+korkeus+korkeus*leveys*2];
@@ -61,13 +55,14 @@ public class PolkuPuu {
         return rajat;
     }
     
-    // Muokataan 2-ulotteiset indeksit 1-ulotteiseen listaan sopiviksi
+    // Muokataan 2-ulotteiset indeksit 1-ulotteiseen taulukkoon sopiviksi
     
     private int indeksiin(int rivi, int sarake) {
         return rivi * leveys + sarake;
     }
     
-    // luodaan metodi, joka tekee saman, kuin Collections.shuffle, mutta taulukolle
+    // sekoitetaan labyrintin kaaret satunnaiseen järjestykseen
+
     private Raja[] sekoitaTaulukko(Raja[] rajat) {
 		Random rand = new Random();
 		for (int i = 0; i < rajat.length; i++) {
@@ -79,22 +74,17 @@ public class PolkuPuu {
         return rajat;
     }
 
-    // Luodaan lista reunoista, jotka yhdistävät polkuja Kruskalin algoritmiä hyödyntäen.
-    // Mitä tässä tuo stream ja filter ja collect toList tekevät? raja on ilmeisesti järjestyksessä otettava olio listasta rajat? 
-    // connects on tässä tiedostossa myöhemmin esitettävä funktio ja erotteleOsat yllä annettu muuttuja.
+    // Luodaan lista kaarista, joista muodostuu labyrintin yhdistävä polku Kruskalin algoritmiä hyödyntäen.
 
     private Raja[] luoViritettyPuu(Raja[] rajat) {
         long start = System.nanoTime();
         ErotetutOsat erotteleOsat = new ErotetutOsat(leveys * korkeus);
-    //    return rajat.stream().filter(raja -> connects(raja, erotteleOsat)).collect(toList());
-    // mites tän truerajat taulukon koko, onko tällä väliä, jos jää liian suureksi? Miten tän sais just oikeen kokoiseksi?
         Raja[] truerajat = new Raja[rajat.length];
         int apu = 0;
         for (int i = 0; i < rajat.length; i++) {
             var raja = rajat[i];
             if (raja != null) {
                 if (connects(raja, erotteleOsat)){
-                    // miten vois välttää, että tänne ei jää tyhjiä väliin? apumuuttujalla?
                     truerajat[i]=rajat[i];
                     apu++;
                 } else {
@@ -115,7 +105,7 @@ public class PolkuPuu {
         return puunrajat;
     }
 
-    // Testataan, yhdistääkö raja polkuja
+    // Testataan, yhdistääkö tietty kaari jo polkuja. Jos ei niin ne voidaan yhdistää.
 
     private boolean connects(Raja raja, ErotetutOsat erotetutOsat) {
         var eka = raja.getEkaPala();
@@ -123,15 +113,7 @@ public class PolkuPuu {
         return erotetutOsat.yhdistys(eka, toka);
     }
 
-    // Lista paloista, jotka yhdistävät polkuja
-    
-//    private Pala[] luoPolut(Raja[] viritettyPuu) {
-//        return viritettyPuu.stream().map(raja -> {
-//                var eka = indeksista(raja.getEkaPala());
-//                var toka = indeksista(raja.getTokaPala());
-//                return getPolku(eka, toka);
-//            }).collect(toList());
-//    }
+    // luodaan lista paloista, jotka kuuluvat Kruskalin algoritmin luomaan labyrinttiin. Ne ovat kaikki tyyppiä KULKU erotukseksi MUURI tyypeistä, joita pitkin ei voi kulkea labyrintin läpi.
 
     private Pala[] luoPolut(Raja[] viritettyPuu) {
         var kulkupalat = new Pala[viritettyPuu.length];
@@ -151,13 +133,15 @@ public class PolkuPuu {
         return new Pala(rivi, sarake, KULKU);
     }
 
-    //  Palauttaa reitistä palan koordinaatteineen
+    //  Palauttaa reitistä palan koordinaatteineen ja tyyppeineen
 
     private Pala getPolku(Pala eka, Pala toka) {
         var rivi = eka.getRivi() + toka.getRivi()+1;
         var sarake = eka.getSarake() + toka.getSarake()+1;
         return new Pala(rivi, sarake, KULKU);
     }
+
+    // algoritmien tehokkuusvertailua varten.
 
     public long getAika() {
         return this.timeElapsed;
