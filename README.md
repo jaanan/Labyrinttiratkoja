@@ -2,11 +2,13 @@
 Tiralabra alkukesä 2021
 
 ## Aihe    
-Verkot ja polun etsintä; miten löydetään tehokkaasti nopein/lyhin reitti labyrintistä ulos.    
+Verkot ja polun etsintä; kaksi erilaista labyrintin generoimisalgoritmiä vertailussa. 
+
 ## Ohjelmointikieli  
-Java  
+Java 
+
 ## Työn laajuus  
-Ohjelma, joka luo käyttäjän toivoman kokoisen satunnaisen labyrintin ja sitten ratkaisee sen.<br/>
+Ohjelma, joka luo käyttäjän toivoman kokoisen satunnaisen labyrintin kahta eri algoritmiä hyödntäen ja kertoo kumpi niistä suoriutui tehtävästä nopeammin. <br/>
 
 [Määrittelydokumentti](https://github.com/jaanan/labyrinttiratkoja/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
