@@ -1,5 +1,6 @@
 ## Mitä on testattu, miten tämä tehtiin
+Olen testannut labtoolissa saamieni ohjeiden mukaan hyödyntäen ratkaisualgoritmia, että labyrintti on määritelmän mukainen, että alku- ja loppupisteen välillä on reitti, ja että kaikkiin kohtiin labyrintissa pääsee.
 ## Minkälaisilla syötteillä testaus tehtiin (vertailupainotteisissa töissä tärkeää)
+Testit ajetaan aina vakioisilla luvuilla, jotka näkyvät testitiedostoissa. 
 ## Miten testit voidaan toistaa
-## Ohjelman toiminnan empiirisen testauksen tulosten esittäminen graafisessa muodossa.
-## Testaus on ideaalitapauksessa suoritettava ohjelma. Tällöin testi on helposti toistettavissa, mikä helpottaa toteutuksen tekoa jo varhaisessa vaiheessa. Javalla tehdyissä töissä on erittäin suositeltavaa käyttää testaukseen JUnitia.
+Testit voidaan toistaa ajamalla ./gradlew test terminaalissa. 
