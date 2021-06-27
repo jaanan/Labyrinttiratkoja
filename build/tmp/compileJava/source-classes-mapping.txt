@@ -4,8 +4,9 @@ labyrintti/algoritmit/ratkaisu/Ratkoja.java
  labyrintti.algoritmit.ratkaisu.Ratkoja
 labyrintti/Main.java
  labyrintti.Main
-labyrintti/palvelu/Konsoli.java
- labyrintti.palvelu.Konsoli
+labyrintti/algoritmit/generointi/PriminAlgoritmi.java
+ labyrintti.algoritmit.generointi.PriminAlgoritmi
+ labyrintti.algoritmit.generointi.PriminAlgoritmi$Piste
 labyrintti/malli/Pala.java
  labyrintti.malli.Pala
  labyrintti.malli.Pala$Tyyppi
@@ -17,6 +18,5 @@ labyrintti/algoritmit/generointi/Raja.java
  labyrintti.algoritmit.generointi.Raja
 labyrintti/malli/Labyrintti.java
  labyrintti.malli.Labyrintti
-labyrintti/algoritmit/generointi/PriminAlgoritmi.java
- labyrintti.algoritmit.generointi.PriminAlgoritmi
- labyrintti.algoritmit.generointi.PriminAlgoritmi$Piste
+labyrintti/palvelu/Konsoli.java
+ labyrintti.palvelu.Konsoli

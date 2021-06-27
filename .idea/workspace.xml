@@ -5,30 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc785946-afda-48ce-b5bc-39b92e91debb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/KruskalTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/KruskalTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/PrimTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/PrimTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-KruskalTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-KruskalTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-PrimTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-PrimTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labyrintti/algoritmit/generointi/ErotetutOsat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/labyrintti/algoritmit/generointi/ErotetutOsat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labyrintti/algoritmit/generointi/PolkuPuu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/labyrintti/algoritmit/generointi/PolkuPuu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labyrintti/algoritmit/generointi/PriminAlgoritmi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/labyrintti/algoritmit/generointi/PriminAlgoritmi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/labyrintti/algoritmit/generointi/Raja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/labyrintti/algoritmit/generointi/Raja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/labyrintti/malli/Labyrintti.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/labyrintti/malli/Labyrintti.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +117,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fe3603a9-a270-481f-b539-6587e5462524" name="Default Changelist" comment="" />
+      <changelist id="cc785946-afda-48ce-b5bc-39b92e91debb" name="Default Changelist" comment="" />
       <created>1623953981834</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

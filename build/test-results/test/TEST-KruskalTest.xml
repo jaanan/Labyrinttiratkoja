@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="KruskalTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-06-26T16:18:58" hostname="Jaanas-MacBook-Pro-2.local" time="0.054">
+<testsuite name="KruskalTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-06-27T10:25:22" hostname="Jaanas-MacBook-Pro-2.local" time="0.052">
   <properties/>
   <testcase name="algoritmiPalauttaaVainKulkupaloja()" classname="KruskalTest" time="0.001"/>
   <testcase name="alunJaLopunValillaOnReitti()" classname="KruskalTest" time="0.005"/>
-  <testcase name="kaikkialleLabyrintissäPääsee()" classname="KruskalTest" time="0.048"/>
+  <testcase name="kaikkialleLabyrintissäPääsee()" classname="KruskalTest" time="0.046"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
