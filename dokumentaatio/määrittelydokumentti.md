@@ -26,9 +26,9 @@ Ohjelman voi ladata omalle koneelle ja käyttää sitä terminaalissa. Ohjelma k
 Kruskalin algoritmi ratkaisee ongelman ajassa O(e log e) kun Primin algoritmille aikavaativuus on O(e log v). Kruskal sopii paremmin harvoille verkoille, sillä e viittaa tässä kaariin (edge) ja v solmuihin (vertex). 
 
 ## Lähteet
-[Kruskalin algoritmi labyrintin luomiseen](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Kruskal's_algorithm)
-[Primin algoritmi labyrintin luomiseen](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Prim's_algorithm)
-[A* algoritmi labyrintin ratkaisuun](https://en.wikipedia.org/wiki/Maze-solving_algorithm#Shortest_path_algorithm)
+[Kruskalin algoritmi labyrintin luomiseen](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Kruskal's_algorithm)<br/>
+[Primin algoritmi labyrintin luomiseen](https://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Prim's_algorithm)<br/>
+[A* algoritmi labyrintin ratkaisuun](https://en.wikipedia.org/wiki/Maze-solving_algorithm#Shortest_path_algorithm)<br/>
 [Pienin virittävä puu](https://en.wikipedia.org/wiki/Minimum_spanning_tree)
 
 
