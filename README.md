@@ -10,7 +10,7 @@ Java
 ## Työn laajuus  
 Ohjelma, joka luo käyttäjän toivoman kokoisen satunnaisen labyrintin kahta eri algoritmiä hyödntäen ja kertoo kumpi niistä suoriutui tehtävästä nopeammin. <br/>
 
-[Määrittelydokumentti](https://github.com/jaanan/labyrinttiratkoja/blob/master/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
+[Dokumentaatio](https://github.com/jaanan/labyrinttiratkoja/tree/master/dokumentaatio)
 
 [Viikkoraportti 1](https://github.com/jaanan/labyrinttiratkoja/blob/d240f530ac72d38cb9af57dda6739d9a1252f5a7/dokumentaatio/viikkoraportti1.md)
 
