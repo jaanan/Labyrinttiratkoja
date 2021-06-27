@@ -8,7 +8,7 @@ Verkot ja polun etsintä; kaksi erilaista labyrintin generoimisalgoritmiä verta
 Java 
 
 ## Työn laajuus  
-Ohjelma, joka luo käyttäjän toivoman kokoisen satunnaisen labyrintin kahta eri algoritmiä hyödntäen ja kertoo kumpi niistä suoriutui tehtävästä nopeammin. <br/>
+Ohjelma, joka luo käyttäjän toivoman kokoisen satunnaisen labyrintin kahta eri algoritmiä hyödyntäen ja kertoo kumpi niistä suoriutui tehtävästä nopeammin. <br/>
 
 [Dokumentaatio](https://github.com/jaanan/labyrinttiratkoja/tree/master/dokumentaatio)
 
